@@ -3,7 +3,9 @@ Compilers Group Projects
 
 Contributors:
 	Gregor Smirnow
+	
 	Spencer DeBuf - (406) 690-3585		spencer602@gmail.com
+	
 	Ken Taylor
 	
 	
