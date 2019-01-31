@@ -47,7 +47,7 @@ public class Compiler
      */
     public void compileFile()
     {
-        printGenerateTokens();
+        printTokens();
         generateAndParseTokens();
         
         /* Insert other steps here */
@@ -63,7 +63,7 @@ public class Compiler
      *   CommonTokenStream. These Tokens are used in step 1 / 2.
      * </p>
      */
-    private void printGenerateTokens()
+    private void printTokens()
     {
         List<Token> tokens = (List<Token>) lexer.getAllTokens();
         TokenVisualizer tokenVisualizer = new TokenVisualizer(tokens);
