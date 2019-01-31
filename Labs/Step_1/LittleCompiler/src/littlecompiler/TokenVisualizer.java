@@ -13,12 +13,12 @@ import org.antlr.v4.runtime.Token;
  * <p>
  *  A utility class that prints the generated tokens in the format:
  *      Tokens:
- *       { TYPE_1 : TEXT_1 }
- *       { TYPE_2 : TEXT_2 }
- *                .
- *                .
- *                .
- *       { TYPE_N : TEXT_N }
+ *          TYPE_1 : TEXT_1
+ *          TYPE_2 : TEXT_2
+ *                 .
+ *                 .
+ *                 .
+ *          TYPE_N : TEXT_N
  * </p>
  * @author im5no
  */
@@ -93,8 +93,7 @@ public class TokenVisualizer
         int tokenTypeID = token.getType();
         String tokenType = LittleLexer.ruleNames[tokenTypeID - 1];
         
-        final int lengthOfLeftSide = lengthOfLeftHandSide;
-        int leftSideWhiteSpaceSize = lengthOfLeftSide - tokenType.length();
+        int leftSideWhiteSpaceSize = lengthOfLeftHandSide - tokenType.length();
         StringBuilder whiteSpaceBuilder = new StringBuilder();
         for (int i = 0; i < leftSideWhiteSpaceSize; i++)
             whiteSpaceBuilder.append(" ");
