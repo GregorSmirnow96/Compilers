@@ -38,23 +38,6 @@ public class Compiler
     
     /**
      * <p>
-     *  Performs the following steps:
-     *   0) Print tokens
-     *   1) Pass tokens to parser
-     *   2) Parse tokens into parse tree
-     *   3) Generate code
-     * </p>
-     */
-    public void compileFile()
-    {
-        printTokens();
-        generateAndParseTokens();
-        
-        /* Insert other steps here */
-    }
-    
-    /**
-     * <p>
      *  STEP 0:
      *   This step isn't required for generating a parse tree. It is simply for
      *   demonstration purposes. Once lexer.getAllTokens() has been called there
@@ -63,7 +46,7 @@ public class Compiler
      *   CommonTokenStream. These Tokens are used in step 1 / 2.
      * </p>
      */
-    private void printTokens()
+    public void printTokens()
     {
         List<Token> tokens = (List<Token>) lexer.getAllTokens();
         TokenVisualizer tokenVisualizer = new TokenVisualizer(tokens);
@@ -81,6 +64,5 @@ public class Compiler
     private void generateAndParseTokens()
     {
         parseTree = parser.string_literal();
-        System.out.println(parseTree.getText());
     }
 }

@@ -18,13 +18,8 @@ public class LittleParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		DIGIT=1, ALPHANUMERIC=2, LETTER=3, IDENTIFIER=4, INT_LITERAL=5, FLOAT_LITERAL=6, 
-		STRING_LITERAL=7, COMMENT=8, WS=9, PROGRAM=10, BEGIN=11, END=12, FUNCTION=13, 
-		READ=14, WRITE=15, IF=16, ELSE=17, ENDIF=18, WHILE=19, ENDWHILE=20, CONTINUE=21, 
-		BREAK=22, RETURN=23, INT=24, VOID=25, STRING=26, FLOAT=27, SET_TO=28, 
-		PLUS=29, MINUS=30, MULTIPLY=31, DIVIDE=32, EQUALS=33, NOT_EQUALS=34, LESS_THAN=35, 
-		GREATER_THAN=36, OPEN_PARENTHESES=37, CLOSE_PARENTHESES=38, END_STATEMENT=39, 
-		COMMA=40, LESS_THAN_OR_EQUAL_TO=41, GREATER_THAN_OR_EQUAL_TO=42;
+		KEYWORD=1, OPERATOR=2, IDENTIFIER=3, INTLITERAL=4, FLOATLITERAL=5, STRINGLITERAL=6, 
+		COMMENT=7, WS=8, DIGIT=9, ALPHANUMERIC=10, LETTER=11, STRING_LITERAL=12;
 	public static final int
 		RULE_string_literal = 0;
 	public static final String[] ruleNames = {
@@ -32,21 +27,10 @@ public class LittleParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, null, null, null, null, null, null, null, null, null, "'PROGRAM'", 
-		"'BEGIN'", "'END'", "'FUNCTION'", "'READ'", "'WRITE'", "'IF'", "'ELSE'", 
-		"'ENDIF'", "'WHILE'", "'ENDWHILE'", "'CONTINUE'", "'BREAK'", "'RETURN'", 
-		"'INT'", "'VOID'", "'STRING'", "'FLOAT'", "':='", "'+'", "'-'", "'*'", 
-		"'/'", "'='", "'!='", "'<'", "'>'", "'('", "')'", "';'", "','", "'<='", 
-		"'>='"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, "DIGIT", "ALPHANUMERIC", "LETTER", "IDENTIFIER", "INT_LITERAL", 
-		"FLOAT_LITERAL", "STRING_LITERAL", "COMMENT", "WS", "PROGRAM", "BEGIN", 
-		"END", "FUNCTION", "READ", "WRITE", "IF", "ELSE", "ENDIF", "WHILE", "ENDWHILE", 
-		"CONTINUE", "BREAK", "RETURN", "INT", "VOID", "STRING", "FLOAT", "SET_TO", 
-		"PLUS", "MINUS", "MULTIPLY", "DIVIDE", "EQUALS", "NOT_EQUALS", "LESS_THAN", 
-		"GREATER_THAN", "OPEN_PARENTHESES", "CLOSE_PARENTHESES", "END_STATEMENT", 
-		"COMMA", "LESS_THAN_OR_EQUAL_TO", "GREATER_THAN_OR_EQUAL_TO"
+		null, "KEYWORD", "OPERATOR", "IDENTIFIER", "INTLITERAL", "FLOATLITERAL", 
+		"STRINGLITERAL", "COMMENT", "WS", "DIGIT", "ALPHANUMERIC", "LETTER", "STRING_LITERAL"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -135,8 +119,8 @@ public class LittleParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3,\7\4\2\t\2\3\2\3"+
-		"\2\3\2\2\2\3\2\2\2\2\5\2\4\3\2\2\2\4\5\7\t\2\2\5\3\3\2\2\2\2";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16\7\4\2\t\2\3\2"+
+		"\3\2\3\2\2\2\3\2\2\2\2\5\2\4\3\2\2\2\4\5\7\16\2\2\5\3\3\2\2\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

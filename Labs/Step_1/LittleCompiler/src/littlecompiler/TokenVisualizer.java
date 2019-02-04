@@ -12,13 +12,13 @@ import org.antlr.v4.runtime.Token;
 /**
  * <p>
  *  A utility class that prints the generated tokens in the format:
- *      Tokens:
- *          TYPE_1 : TEXT_1
- *          TYPE_2 : TEXT_2
- *                 .
- *                 .
- *                 .
- *          TYPE_N : TEXT_N
+ *      Token Type: {type}
+ *      Value: {value}
+ *             .
+ *             .
+ *             .
+ *      Token Type: {type}
+ *      Value: {value}
  * </p>
  * @author im5no
  */
@@ -26,35 +26,10 @@ public class TokenVisualizer
 {
     /* A List of generated Tokens */
     private final List<Token> tokens;
-    /* The length of the token type in the token-info-display-string */
-    private final int lengthOfLeftHandSide;
     
     public TokenVisualizer(List<Token> tokens)
     {
         this.tokens = tokens;
-        this.lengthOfLeftHandSide = findLongestTokenTypeNameLength();
-    }
-    
-    /**
-     * <p>
-     *  Finds the longest length of the Little language's token names.
-     * </p>
-     * @return
-     *  The length of the longest Little-token name.
-     */
-    private int findLongestTokenTypeNameLength()
-    {
-        int longestTypeNameLength = 0;
-        for (Token token : tokens)
-        {
-            String tokenType = LittleLexer.ruleNames[token.getType() - 1];
-            int tokenTypeNameLength = tokenType.length();
-            longestTypeNameLength = longestTypeNameLength < tokenTypeNameLength
-                ? tokenTypeNameLength
-                : longestTypeNameLength;
-        }
-        
-        return longestTypeNameLength;
     }
     
     /**
@@ -68,12 +43,10 @@ public class TokenVisualizer
     {
         StringBuilder stringBuilder = new StringBuilder();
         
-        stringBuilder.append("Tokens:\n");
         tokens.forEach(token ->
         {
-            String nextLine = generateTokenDataString(token);
-            stringBuilder.append(nextLine);
-            stringBuilder.append("\n");
+            String nextTokenInfo = generateTokenDataString(token);
+            stringBuilder.append(nextTokenInfo);
         });
         
         return stringBuilder.toString();
@@ -81,24 +54,21 @@ public class TokenVisualizer
     
     /**
      * <p>
-     *  Generates a single line in the token info String.
+     *  Generates a String which describes a token.
      * </p>
      * @param token
-     *  The token whose info is contained in this line.
+     *  The token whose info is contained in this String.
      * @return
-     *  A generated line of text which contains info on a token.
+     *  A String of the format:
+     *      Token Type: {type}
+     *      Value: {value}
      */
     private String generateTokenDataString(Token token)
     {
         int tokenTypeID = token.getType();
         String tokenType = LittleLexer.ruleNames[tokenTypeID - 1];
         
-        int leftSideWhiteSpaceSize = lengthOfLeftHandSide - tokenType.length();
-        StringBuilder whiteSpaceBuilder = new StringBuilder();
-        for (int i = 0; i < leftSideWhiteSpaceSize; i++)
-            whiteSpaceBuilder.append(" ");
-        String whiteSpace = whiteSpaceBuilder.toString();
-        
-        return "\t" + tokenType + whiteSpace + " : " + token.getText();
+        return
+            "Token Type: " + tokenType + "\nValue: " + token.getText() + "\n";
     }
 }

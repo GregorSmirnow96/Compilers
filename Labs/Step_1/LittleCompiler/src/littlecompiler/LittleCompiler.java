@@ -27,6 +27,7 @@ public class LittleCompiler
         Compiler littleCompiler = compilerFactory
             .createCompiler(compiledFilePath);
         
-        littleCompiler.compileFile();
+        /* Call consecutive compilation steps: */
+        littleCompiler.printTokens();   // Step 1
     }
 }
