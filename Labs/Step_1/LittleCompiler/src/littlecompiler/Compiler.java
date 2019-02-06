@@ -54,6 +54,42 @@ public class Compiler
         
         lexer.reset();
     }
+
+    /**
+     * <p>
+     *  STEP 0:
+     *   This step isn't required for generating a parse tree. It is simply for
+     *   demonstration purposes. Once lexer.getAllTokens() has been called there
+     *   are no more Tokens in the parser's CommonTokenStream to be read, so
+     *   lexer.reset() is called to put the Tokens back into the parser's
+     *   CommonTokenStream. These Tokens are used in step 1 / 2.
+     * </p>
+     */
+    public void writeTokensToFile throws IOException()
+    {
+        List<Token> tokens = (List<Token>) lexer.getAllTokens();
+        TokenVisualizer tokenVisualizer = new TokenVisualizer(tokens);
+        //System.out.println(tokenVisualizer.getTokenInfoString());
+
+        fileWriter = new BufferedWriter(new FileWriter("./step_0_output.txt"));
+        fileWriter.write(tokenVisualizer.getTokenInfoString());
+
+        fileWriter.close();
+
+        lexer.reset();
+    }
+
+    
+    public static void usingBufferedWritter() throws IOException
+    {
+        String fileContent = "Hello Learner !! Welcome to howtodoinjava.com.";
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter("c:/temp/samplefile1.txt"));
+        writer.write(fileContent);
+        writer.close();
+    }
+
+
     
     /**
      * <p>
