@@ -21,13 +21,18 @@ public class LittleCompiler
      */
     public static void main(String[] arguments) throws IOException
     {
-        String compiledFilePath = arguments[0];
-        
-        CompilerFactory compilerFactory = new CompilerFactory();
-        Compiler littleCompiler = compilerFactory
-            .createCompiler(compiledFilePath);
-        
-        /* Call consecutive compilation steps: */
-        littleCompiler.writeTokensToFile();   // Step 1
+        for (String compiledFilePath : arguments)
+        {
+            CompilerFactory compilerFactory = new CompilerFactory();
+            Compiler littleCompiler = compilerFactory
+                .createCompiler(compiledFilePath);
+
+            /* Call consecutive compilation steps: */
+            // Step 1
+            String[] filePathParts = compiledFilePath.split("\\\\");
+            String fileName = filePathParts[filePathParts.length - 1];
+            String fileNameWithoutExtension = fileName.split("\\.")[0];
+            littleCompiler.writeTokensToFile(fileNameWithoutExtension);
+        }
     }
 }

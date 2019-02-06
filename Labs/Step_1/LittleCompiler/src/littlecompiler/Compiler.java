@@ -68,8 +68,11 @@ public class Compiler
      *   lexer.reset() is called to put the Tokens back into the parser's
      *   CommonTokenStream. These Tokens are used in step 1 / 2.
      * </p>
+     * @param fileName
+     *  The name of the file whose tokens were generated.
+     * @throws java.io.IOException
      */
-    public void writeTokensToFile() throws IOException
+    public void writeTokensToFile(String fileName) throws IOException
     {
         List<Token> tokens = (List<Token>) lexer.getAllTokens();
         TokenVisualizer tokenVisualizer = new TokenVisualizer(tokens);
@@ -79,7 +82,7 @@ public class Compiler
         if (!outputFile.exists())
             outputFile.mkdir();
         try (BufferedWriter fileWriter = new BufferedWriter(
-            new FileWriter(outputFilePath + "/program_output.txt")))
+            new FileWriter(outputFilePath + "/" + fileName + ".out")))
         {
             fileWriter.write(tokenVisualizer.getTokenInfoString());
         }
