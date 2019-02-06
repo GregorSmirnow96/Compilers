@@ -79,7 +79,7 @@ public class Compiler
         lexer.reset();
     }
 
-    
+
     public static void usingBufferedWritter() throws IOException
     {
         String fileContent = "Hello Learner !! Welcome to howtodoinjava.com.";
