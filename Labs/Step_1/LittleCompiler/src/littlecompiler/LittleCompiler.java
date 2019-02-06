@@ -28,6 +28,6 @@ public class LittleCompiler
             .createCompiler(compiledFilePath);
         
         /* Call consecutive compilation steps: */
-        littleCompiler.printTokens();   // Step 1
+        littleCompiler.writeTokensToFile();   // Step 1
     }
 }
