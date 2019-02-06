@@ -5,6 +5,10 @@
  */
 package littlecompiler;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import littlecompiler.GeneratedGrammarFiles.LittleBaseListener;
 import littlecompiler.GeneratedGrammarFiles.LittleLexer;
@@ -65,32 +69,24 @@ public class Compiler
      *   CommonTokenStream. These Tokens are used in step 1 / 2.
      * </p>
      */
-    public void writeTokensToFile throws IOException()
+    public void writeTokensToFile() throws IOException
     {
         List<Token> tokens = (List<Token>) lexer.getAllTokens();
         TokenVisualizer tokenVisualizer = new TokenVisualizer(tokens);
-        //System.out.println(tokenVisualizer.getTokenInfoString());
 
-        fileWriter = new BufferedWriter(new FileWriter("./step_0_output.txt"));
-        fileWriter.write(tokenVisualizer.getTokenInfoString());
-
-        fileWriter.close();
+        String outputFilePath = "step_1_output";
+        File outputFile = new File(outputFilePath);
+        if (!outputFile.exists())
+            outputFile.mkdir();
+        try (BufferedWriter fileWriter = new BufferedWriter(
+            new FileWriter(outputFilePath + "/program_output.txt")))
+        {
+            fileWriter.write(tokenVisualizer.getTokenInfoString());
+        }
 
         lexer.reset();
     }
 
-
-    public static void usingBufferedWritter() throws IOException
-    {
-        String fileContent = "Hello Learner !! Welcome to howtodoinjava.com.";
-
-        BufferedWriter writer = new BufferedWriter(new FileWriter("c:/temp/samplefile1.txt"));
-        writer.write(fileContent);
-        writer.close();
-    }
-
-
-    
     /**
      * <p>
      *  STEP 1 + 2:
