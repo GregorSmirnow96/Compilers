@@ -77,7 +77,7 @@ public class Compiler
         List<Token> tokens = (List<Token>) lexer.getAllTokens();
         TokenVisualizer tokenVisualizer = new TokenVisualizer(tokens);
 
-        String outputFilePath = "step_1_output";
+        String outputFilePath = "../step_1_output";
         File outputFile = new File(outputFilePath);
         if (!outputFile.exists())
             outputFile.mkdir();
