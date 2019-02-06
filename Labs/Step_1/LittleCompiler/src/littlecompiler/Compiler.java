@@ -89,7 +89,7 @@ public class Compiler
 
         lexer.reset();
     }
-    
+
     /**
      * <p>
      *  STEP 1 + 2:
