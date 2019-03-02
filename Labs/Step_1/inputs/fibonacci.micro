@@ -1,4 +1,4 @@
-PROGRAM fibonacci ads66^
+PROGRAM fibonacci
 BEGIN
 
 	STRING input := "Please input an integer number: ";

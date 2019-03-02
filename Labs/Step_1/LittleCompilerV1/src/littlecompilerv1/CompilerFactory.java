@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package littlecompiler;
+package littlecompilerv1;
 
 import java.io.IOException;
-import littlecompiler.GeneratedGrammarFiles.LittleBaseListener;
-import littlecompiler.GeneratedGrammarFiles.LittleLexer;
-import littlecompiler.GeneratedGrammarFiles.LittleParser;
+import littlecompilerv1.GeneratedGrammarFiles.LittleBaseListener;
+import littlecompilerv1.GeneratedGrammarFiles.LittleLexer;
+import littlecompilerv1.GeneratedGrammarFiles.LittleParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;

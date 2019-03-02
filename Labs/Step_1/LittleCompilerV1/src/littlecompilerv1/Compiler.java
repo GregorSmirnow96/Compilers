@@ -3,23 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package littlecompiler;
+package littlecompilerv1;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-import littlecompiler.GeneratedGrammarFiles.LittleBaseListener;
-import littlecompiler.GeneratedGrammarFiles.LittleLexer;
+import littlecompilerv1.GeneratedGrammarFiles.LittleBaseListener;
+import littlecompilerv1.GeneratedGrammarFiles.LittleLexer;
 import org.antlr.v4.runtime.Token;
-import littlecompiler.GeneratedGrammarFiles.LittleParser;
-import org.antlr.v4.runtime.DefaultErrorStrategy;
-import org.antlr.v4.runtime.InputMismatchException;
-import org.antlr.v4.runtime.Parser;
-import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.misc.ParseCancellationException;
+import littlecompilerv1.GeneratedGrammarFiles.LittleParser;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
@@ -108,7 +102,7 @@ public class Compiler
     {
         try
         {
-            parseTree = parser.program();
+            parseTree = parser.string_literal();
             System.out.println("Accepted");
         }
         catch (Exception e)

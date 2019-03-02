@@ -9,7 +9,7 @@ Value: STRING
 Token Type: IDENTIFIER
 Value: dummy
 Token Type: OPERATOR
-Value: :=df
+Value: :=
 Token Type: STRINGLITERAL
 Value: "abcde"
 Token Type: OPERATOR
