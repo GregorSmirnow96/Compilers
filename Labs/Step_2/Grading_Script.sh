@@ -1,6 +1,5 @@
 #!/bin/sh
 
-echo aa
 INPUTS=inputs/*
 mkdir usertest
 for i in $INPUTS
@@ -10,6 +9,6 @@ for i in $INPUTS
 		echo "Testing input file $i"
 		output="${name}Test.out"
 		outtest="${name}.out"
-		./Micro $i > usertest/$output
+		java -jar LittleCompiler.jar $i > usertest/$output
 		diff -B -b -s usertest/$output outputs/$outtest
 	done

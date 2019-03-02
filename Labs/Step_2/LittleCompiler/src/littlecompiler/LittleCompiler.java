@@ -29,7 +29,9 @@ public class LittleCompiler
 
         /* Call consecutive compilation steps: */
         // Step 1
-        String[] filePathParts = compiledFilePath.split("\\\\");
+        String[] filePathParts = compiledFilePath
+            .replace("\\\\", "/")
+            .split("/");
         String fileName = filePathParts[filePathParts.length - 1];
         String fileNameWithoutExtension = fileName.split("\\.")[0];
         

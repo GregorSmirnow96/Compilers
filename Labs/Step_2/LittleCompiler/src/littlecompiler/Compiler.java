@@ -14,12 +14,6 @@ import littlecompiler.GeneratedGrammarFiles.LittleBaseListener;
 import littlecompiler.GeneratedGrammarFiles.LittleLexer;
 import org.antlr.v4.runtime.Token;
 import littlecompiler.GeneratedGrammarFiles.LittleParser;
-import org.antlr.v4.runtime.DefaultErrorStrategy;
-import org.antlr.v4.runtime.InputMismatchException;
-import org.antlr.v4.runtime.Parser;
-import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
@@ -110,15 +104,15 @@ public class Compiler
         {
             parseTree = parser.program();
             System.out.println("Accepted");
+            
+            ParseTreeWalker walker = new ParseTreeWalker();
+            walker.walk(
+                listener,
+                parseTree);
         }
         catch (Exception e)
         {
             System.out.println("Not accepted");
         }
-        
-        ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk(
-            listener,
-            parseTree);
     }
 }

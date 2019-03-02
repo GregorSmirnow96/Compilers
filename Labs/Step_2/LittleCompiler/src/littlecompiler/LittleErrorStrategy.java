@@ -32,4 +32,17 @@ public class LittleErrorStrategy extends DefaultErrorStrategy
 
         throw new ParseCancellationException(e);
     }
+    
+    @Override
+    public void recover(
+        Parser recognizer,
+        RecognitionException e)
+    {
+        for (ParserRuleContext context = recognizer.getContext(); context != null; context = context.getParent())
+        {
+            context.exception = e;
+        }
+
+        throw new ParseCancellationException(e);
+    }
 }
