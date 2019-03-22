@@ -1,4 +1,4 @@
-package littlecompiler.GeneratedGrammarFiles;
+package src.littlecompiler.GeneratedGrammarFiles;
 
 // Generated from Little.g4 by ANTLR 4.7.1
 
@@ -556,7 +556,21 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterPostfix_expr(LittleParser.Postfix_exprContext ctx)
 	{
-		
+		ctx.getText();
+        ParseTree declerationTypeTree = ctx.getChild(0);
+        ParseTree declerationTree = ctx.getChild(1);
+        
+        String declarationType = declerationTypeTree
+            .getClass().toString();
+        
+        if (declarationType.contains("string_decl"))
+        {
+            System.out.println(declerationTypeTree.getText());
+        }
+        else
+        {
+            System.out.println(declerationTypeTree.getText());
+        }
 	}
 	/**
 	 * {@inheritDoc}

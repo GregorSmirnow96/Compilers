@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="LittleCompiler/src"/>
+	<classpathentry kind="src" path="LittleCompiler/test"/>
+	<classpathentry kind="src" path="SymbolTables/src"/>
+	<classpathentry kind="lib" path="LittleCompiler/3rd_Party_Dependencies/antlr-4.7.1-complete.jar"/>
+	<classpathentry kind="lib" path="LittleCompiler/3rd_Party_Dependencies/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="LittleCompiler/dist/lib/antlr-4.7.1-complete.jar"/>
+	<classpathentry kind="lib" path="LittleCompiler/dist/lib/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="LittleCompiler/dist/LittleCompiler.jar"/>
+	<classpathentry kind="lib" path="LittleCompiler/lib/antlr-4.7.1-complete.jar"/>
+	<classpathentry kind="lib" path="LittleCompiler/lib/junit-4.10.jar"/>
+	<classpathentry kind="output" path="LittleCompiler/build/classes"/>
+</classpath>
