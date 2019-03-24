@@ -628,7 +628,19 @@ public class LittleBaseListener implements LittleListener {
 	@Override public void enterExpr_list(LittleParser.Expr_listContext ctx)
 	{
 		ParseTree declarationTypeTree = ctx.getChild(0);
-		String declarationType
+		ParseTree declerationTree = ctx.getChild(1);
+		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("expr"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -646,7 +658,24 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterExpr_list_tail(LittleParser.Expr_list_tailContext ctx)
 	{
+		ParseTree declerationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("','"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("expr")) 
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -664,7 +693,36 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterPrimary(LittleParser.PrimaryContext ctx)
 	{
+		ParseTree declerationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("'('"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("expr")) 
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("')'"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("id"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("INTLITERAL"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -682,7 +740,20 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterAddop(LittleParser.AddopContext ctx)
 	{
+		ParseTree declarationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("'+'"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -700,7 +771,20 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterMulop(LittleParser.MulopContext ctx)
 	{
+		ParseTree declarationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("'*'"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -718,7 +802,44 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterIf_stmt(LittleParser.If_stmtContext ctx)
 	{
+		ParseTree declerationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("IF"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("'("")) 
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("cond"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("')'"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("decl"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("stmt_list"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("else_part"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -736,7 +857,24 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterElse_part(LittleParser.Else_partContext ctx)
 	{
+		ParseTree declarationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("ELSE"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if(declarationType.contains("decl"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -754,7 +892,20 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterCond(LittleParser.CondContext ctx)
 	{
+		ParseTree declerationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("expr"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -772,7 +923,36 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterCompop(LittleParser.CompopContext ctx)
 	{
+		ParseTree declerationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("'<'"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("'>"")) 
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("'='"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("'!='"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("<="))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -790,7 +970,40 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterWhile_stmt(LittleParser.While_stmtContext ctx)
 	{
+		ParseTree declerationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("WHILE"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("'("")) 
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("cond"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("')'"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("decl"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("stmt_list"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
