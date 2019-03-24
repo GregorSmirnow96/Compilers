@@ -563,7 +563,7 @@ public class LittleBaseListener implements LittleListener {
         String declarationType = declerationTypeTree
             .getClass().toString();
         
-        if (declarationType.contains("string_decl"))
+        if (declarationType.contains("primary"))
         {
             System.out.println(declerationTypeTree.getText());
         }
@@ -588,7 +588,28 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterCall_expr(LittleParser.Call_exprContext ctx)
 	{
+		ParseTree declerationTypeTree = ctx.getChild(0);
+		ParseTree declerationTree = ctx.getChild(1);
 		
+		String declarationType = declerationTypeTree
+				.getClass().toString();
+		
+		if (declarationType.contains("id"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("'('")) 
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else if (declarationType.contains("expr_list"))
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
+		else
+		{
+			System.out.println(declarationTypeTree.getText());
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -606,7 +627,8 @@ public class LittleBaseListener implements LittleListener {
 	 */
 	@Override public void enterExpr_list(LittleParser.Expr_listContext ctx)
 	{
-		
+		ParseTree declarationTypeTree = ctx.getChild(0);
+		String declarationType
 	}
 	/**
 	 * {@inheritDoc}
