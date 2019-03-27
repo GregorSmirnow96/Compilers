@@ -20,6 +20,7 @@ public class Symbol
     private final String name;
     private final ESymbolType type;
     private final ESymbolAttribute attribute;
+    private String value;
     
     public Symbol(
         String name,
@@ -29,6 +30,14 @@ public class Symbol
         this.name = name;
         this.type = type;
         this.attribute = attribute;
+    }
+    
+    
+    /* Setter */
+    
+    public void setValue(String value)
+    {
+        this.value = value;
     }
     
     
@@ -47,5 +56,10 @@ public class Symbol
     public ESymbolAttribute getAttribute()
     {
         return attribute;
+    }
+    
+    public String getValue()
+    {
+        return value;
     }
 }

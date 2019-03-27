@@ -44,8 +44,8 @@ primary: '(' expr ')' | id | INTLITERAL | FLOATLITERAL;
 addop: '+' | '-';
 mulop: '*' | '/';
 
-if_stmt: 'IF' '(' cond ')' decl stmt_list else_part 'ENDIF';
-else_part: 'ELSE' decl stmt_list |;
+if_stmt: 'IF' '(' cond ')' decl stmt_list else_part 'ENDIF' | 'IF' '(' cond ')' decl stmt_list 'ENDIF' ;
+else_part: 'ELSE' decl stmt_list;
 cond: expr compop expr;
 compop: '<' | '>' | '=' | '!=' | '<=' | '>=';
 

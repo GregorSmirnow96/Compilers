@@ -5,6 +5,9 @@
  */
 package symboltables;
 
+import java.util.Collection;
+import symboltables.enums.ESymbolAttribute;
+
 /**
  *
  * @author im5no
@@ -20,12 +23,7 @@ public class SymbolTableVisualizer
      */
     public void printSymbolTable(SymbolTable rootTable)
     {
-        String currentNamespace = rootTable.getName();
-        
-        System.out.println("---------------");
-        recursivelyPrintSymbolTables(
-            rootTable,
-            currentNamespace);
+        recursivelyPrintSymbolTables(rootTable);
     }
     
     /**
@@ -35,25 +33,13 @@ public class SymbolTableVisualizer
      * </p>
      * @param currentTable
      *  The current table being iterated over.
-     * @param currentNamespace 
-     *  The namespace of the current table.
      */
-    private void recursivelyPrintSymbolTables(
-        SymbolTable currentTable,
-        String currentNamespace)
+    private void recursivelyPrintSymbolTables(SymbolTable currentTable)
     {
-        printTableInfo(
-            currentTable,
-            currentNamespace);
+        printTableInfo(currentTable);
         
         currentTable.getChildTables().forEach(childTable ->
-        {
-            String childNamespace = currentNamespace
-                    .concat(".".concat(childTable.getName()));
-            recursivelyPrintSymbolTables(
-                    childTable,
-                    childNamespace);
-        });
+            recursivelyPrintSymbolTables(childTable));
     }
     
     /**
@@ -62,33 +48,30 @@ public class SymbolTableVisualizer
      * </p>
      * @param currentTable
      *  The table whose info is being printed.
-     * @param currentNamespace
-     *  The namespace of this table.
      */
-    private void printTableInfo(
-        SymbolTable currentTable,
-        String currentNamespace)
+    private void printTableInfo(SymbolTable currentTable)
     {
-        System.out.println(currentNamespace);
-        currentTable.getSymbols().forEach(symbol ->
+        System.out.println("Symbol table ".concat(currentTable.getName()));
+        
+        Collection<Symbol> tableSymbols = currentTable.getSymbols();
+        tableSymbols.forEach(symbol ->
         {
-            String columnWhitespace = "               ";
             String name = symbol.getName();
-            String type = symbol.getType().name();
-            String attribute = symbol.getAttribute().name();
-            String nameColumn = name
-                .concat(columnWhitespace.substring(name.length()));
-            String typeColumn = type
-                .concat(columnWhitespace.substring(type.length()));
-            String attributeColumn = attribute
-                .concat(columnWhitespace.substring(attribute.length()));
-            System.out.println(
-                String.format(
-                    "    %s%s%s",
-                    nameColumn,
-                    typeColumn,
-                    attributeColumn));
+            String type = symbol.getAttribute().toString();
+            
+            if (type.equals(ESymbolAttribute.STRING.toString()))
+            {
+                String value = symbol.getValue();
+                System.out.println(
+                    "name " + name + " type " + type +
+                    " value \"" + value + "\"");
+            }
+            else
+            {
+                System.out.println("name " + name + " type " + type);
+            }
         });
-        System.out.println("---------------");
+        
+        System.out.println();
     }
 }

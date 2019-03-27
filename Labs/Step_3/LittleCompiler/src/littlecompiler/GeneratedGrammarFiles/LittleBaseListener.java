@@ -2,8 +2,7 @@ package littlecompiler.GeneratedGrammarFiles;
 
 // Generated from Little.g4 by ANTLR 4.7.1
 
-import java.util.ArrayList;
-import littlecompiler.IterableStackAdapter;
+import java.util.Stack;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -20,9 +19,8 @@ import symboltables.enums.ESymbolType;
  */
 public class LittleBaseListener implements LittleListener
 {
-    public final IterableStackAdapter<SymbolTable> symbolTables =
-        new IterableStackAdapter<>(new ArrayList<>());
-    private int currentBlockCount = 0;
+    public final Stack<SymbolTable> symbolTables = new Stack<>();
+    private int currentBlockCount = 1;
     
     /**
      * {@inheritDoc}
@@ -110,11 +108,16 @@ public class LittleBaseListener implements LittleListener
         
         ParseTree stringNameNode = ctx.children.get(1);
         String stringName = stringNameNode.getText();
-        currentScopeTable.addSymbol(
-            new Symbol(
-                stringName,
-                ESymbolType.VAR,
-                ESymbolAttribute.STRING));
+        Symbol stringSymbol = new Symbol(
+            stringName,
+            ESymbolType.VAR,
+            ESymbolAttribute.STRING);
+        
+        ParseTree stringValueNode = ctx.children.get(3);
+        String stringValue = stringValueNode.getText().replace("\"", "");
+        stringSymbol.setValue(stringValue);
+        
+        currentScopeTable.addSymbol(stringSymbol);
     }
     
     /**
@@ -292,7 +295,16 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterParam_decl(LittleParser.Param_declContext ctx)
     {
+        SymbolTable currentScope = this.symbolTables.peek();
         
+        String parameterType = ctx.children.get(0).getText();
+        String parameterName = ctx.children.get(1).getText();
+        
+        currentScope.addSymbol(
+            new Symbol(
+                parameterName,
+                ESymbolType.VAR,
+                ESymbolAttribute.valueOf(parameterType)));
     }
 
     /**
@@ -342,7 +354,6 @@ public class LittleBaseListener implements LittleListener
             .valueOf(returnTypeString);
         
         SymbolTable currentScopeTable = this.symbolTables.peek();
-        
         
         currentScopeTable.addSymbol(
             new Symbol(
@@ -792,7 +803,12 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterIf_stmt(LittleParser.If_stmtContext ctx)
     {
+        String blockScopeName = "Block " + currentBlockCount++;
         
+        SymbolTable currentScope = this.symbolTables.peek();
+        SymbolTable newScope = new SymbolTable(blockScopeName);
+        currentScope.addChildTable(newScope);
+        this.symbolTables.push(newScope);
     }
 
     /**
@@ -802,7 +818,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitIf_stmt(LittleParser.If_stmtContext ctx)
     {
-        
+        this.symbolTables.pop();
     }
 
     /**
@@ -812,7 +828,12 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterElse_part(LittleParser.Else_partContext ctx)
     {
+        String blockScopeName = "Block " + currentBlockCount++;
         
+        SymbolTable currentScope = this.symbolTables.peek();
+        SymbolTable newScope = new SymbolTable(blockScopeName);
+        currentScope.addChildTable(newScope);
+        this.symbolTables.push(newScope);
     }
 
     /**
@@ -822,7 +843,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitElse_part(LittleParser.Else_partContext ctx)
     {
-        
+        this.symbolTables.pop();        
     }
 
     /**
@@ -872,8 +893,12 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterWhile_stmt(LittleParser.While_stmtContext ctx)
     {
-        /* Create this block's symbol table */
-        currentBlockCount++;
+        String blockScopeName = "Block " + currentBlockCount++;
+        
+        SymbolTable currentScope = this.symbolTables.peek();
+        SymbolTable newScope = new SymbolTable(blockScopeName);
+        currentScope.addChildTable(newScope);
+        this.symbolTables.push(newScope);
     }
 
     /**
@@ -883,7 +908,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitWhile_stmt(LittleParser.While_stmtContext ctx)
     {
-        
+        this.symbolTables.pop();
     }
 
     /**

@@ -24,10 +24,16 @@ BEGIN
 
 		i := 0;
 		WHILE (i != end)
+            INT dummy;
 			result := F(i);
 			WRITE (i,space);
 			WRITE (result,eol);
 			i := i + 1;	
+		ENDWHILE
+		WHILE (1 != 1)
+            INT test1, test2;
+            FLOAT test3;
+            STRING test4 := "Testing";
 		ENDWHILE
 
 	END

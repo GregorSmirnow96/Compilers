@@ -70,11 +70,10 @@ public class SymbolTable
     
     public void addSymbol(Symbol newSymbol)
     {
-        symbols.add(newSymbol);
-        
         if (newSymbol.getType() == ESymbolType.PROCEDURE)
             addChildProcedureTable(newSymbol);
-        
+        else
+            symbols.add(newSymbol);
     }
     
     private void addChildProcedureTable(Symbol procedureSymbol)

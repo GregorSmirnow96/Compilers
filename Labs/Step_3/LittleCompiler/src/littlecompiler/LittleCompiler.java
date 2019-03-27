@@ -21,6 +21,7 @@ public class LittleCompiler
      */
     public static void main(String[] arguments) throws IOException
     {
+        /*
         for (String compiledFilePath : arguments)
         {
             String[] pathComponents = compiledFilePath.split("\\\\");
@@ -33,5 +34,14 @@ public class LittleCompiler
 
             littleCompiler.generateAndParseTokens();
         }
+        */
+        
+        String filePath = arguments[0].concat("\\test20.micro");
+        String[] pathComponents = filePath.split("\\\\");
+            
+        CompilerFactory compilerFactory = new CompilerFactory();
+        Compiler littleCompiler = compilerFactory.createCompiler(filePath);
+
+        littleCompiler.generateAndParseTokens();
     }
 }
