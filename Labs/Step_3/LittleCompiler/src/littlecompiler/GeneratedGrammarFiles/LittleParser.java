@@ -844,8 +844,8 @@ public class LittleParser extends Parser {
 		try {
 			setState(150);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__10:
+			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
+			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(146);
@@ -854,13 +854,13 @@ public class LittleParser extends Parser {
 				func_declarations();
 				}
 				break;
-			case T__2:
+			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
+				setState(149);
+				func_decl();
 				}
 				break;
-			default:
-				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2390,7 +2390,7 @@ public class LittleParser extends Parser {
 		"\2\u008c\33\3\2\2\2\u008d\u008e\7\f\2\2\u008e\u008f\5\32\16\2\u008f\u0090"+
 		"\5\34\17\2\u0090\u0093\3\2\2\2\u0091\u0093\3\2\2\2\u0092\u008d\3\2\2\2"+
 		"\u0092\u0091\3\2\2\2\u0093\35\3\2\2\2\u0094\u0095\5 \21\2\u0095\u0096"+
-		"\5\36\20\2\u0096\u0099\3\2\2\2\u0097\u0099\3\2\2\2\u0098\u0094\3\2\2\2"+
+		"\5\36\20\2\u0096\u0099\3\2\2\2\u0097\u0099\5 \21\2\u0098\u0094\3\2\2\2"+
 		"\u0098\u0097\3\2\2\2\u0099\37\3\2\2\2\u009a\u009b\7\r\2\2\u009b\u009c"+
 		"\5\22\n\2\u009c\u009d\5\4\3\2\u009d\u009e\7\16\2\2\u009e\u009f\5\30\r"+
 		"\2\u009f\u00a0\7\17\2\2\u00a0\u00a1\7\4\2\2\u00a1\u00a2\5\"\22\2\u00a2"+

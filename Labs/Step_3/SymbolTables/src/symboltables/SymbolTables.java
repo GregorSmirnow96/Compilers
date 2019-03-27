@@ -25,12 +25,12 @@ public class SymbolTables
             new Symbol(
                 "anInt",
                 ESymbolType.VAR,
-                ESymbolAttribute.INTEGER));
+                ESymbolAttribute.INT));
         globalSymbolTable.addSymbol(
             new Symbol(
                 "ProcedureX",
                 ESymbolType.PROCEDURE,
-                ESymbolAttribute.INTEGER));
+                ESymbolAttribute.INT));
         
         SymbolTableVisualizer tableVisualizer = new SymbolTableVisualizer();
         tableVisualizer.printSymbolTable(globalSymbolTable);

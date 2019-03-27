@@ -16,6 +16,7 @@ import org.antlr.v4.runtime.Token;
 import littlecompiler.GeneratedGrammarFiles.LittleParser;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
+import symboltables.SymbolTableVisualizer;
 
 /**
  * <p>
@@ -41,55 +42,10 @@ public class Compiler
         this.parser = parser;
     }
     
-    /**
-     * <p>
-     *  STEP 0:
-     *   This step isn't required for generating a parse tree. It is simply for
-     *   demonstration purposes. Once lexer.getAllTokens() has been called there
-     *   are no more Tokens in the parser's CommonTokenStream to be read, so
-     *   lexer.reset() is called to put the Tokens back into the parser's
-     *   CommonTokenStream. These Tokens are used in step 1 / 2.
-     * </p>
-     */
-    public void printTokens()
+    public void printSymbolTable()
     {
-        List<Token> tokens = (List<Token>) lexer.getAllTokens();
-        TokenVisualizer tokenVisualizer = new TokenVisualizer(tokens);
-        System.out.println(tokenVisualizer.getTokenInfoString());
-        
-        lexer.reset();
-    }
-
-    /**
-     * <p>
-     *  STEP 0:
-     *   This step isn't required for generating a parse tree. It is simply for
-     *   demonstration purposes. Once lexer.getAllTokens() has been called there
-     *   are no more Tokens in the parser's CommonTokenStream to be read, so
-     *   lexer.reset() is called to put the Tokens back into the parser's
-     *   CommonTokenStream. These Tokens are used in step 1 / 2.
-     * </p>
-     * @param fileName
-     *  The name of the file whose tokens were generated.
-     * @throws java.io.IOException
-     */
-    public void writeTokensToFile(String fileName) throws IOException
-    {
-        List<Token> tokens = (List<Token>) lexer.getAllTokens();
-        TokenVisualizer tokenVisualizer = new TokenVisualizer(tokens);
-
-        String outputFilePath = "./step_1_output";
-        File outputFile = new File(outputFilePath);
-        System.out.println(outputFile.getCanonicalPath());
-        if (!outputFile.exists())
-            outputFile.mkdir();
-        try (BufferedWriter fileWriter = new BufferedWriter(
-            new FileWriter(outputFilePath + "/" + fileName + ".out")))
-        {
-            fileWriter.write(tokenVisualizer.getTokenInfoString());
-        }
-
-        lexer.reset();
+        new SymbolTableVisualizer().printSymbolTable(
+            listener.symbolTables.peek());
     }
 
     /**
@@ -103,16 +59,17 @@ public class Compiler
         try
         {
             parseTree = parser.program();
-            System.out.println("Accepted");
             
             ParseTreeWalker walker = new ParseTreeWalker();
             walker.walk(
                 listener,
                 parseTree);
+            
+            printSymbolTable();
         }
         catch (Exception e)
         {
-            System.out.println("Not accepted");
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -78,10 +78,10 @@ public class SymbolTableVisualizer
             String attribute = symbol.getAttribute().name();
             String nameColumn = name
                 .concat(columnWhitespace.substring(name.length()));
-            String typeColumn = name
-                .concat(columnWhitespace.substring(name.length()));
-            String attributeColumn = name
-                .concat(columnWhitespace.substring(name.length()));
+            String typeColumn = type
+                .concat(columnWhitespace.substring(type.length()));
+            String attributeColumn = attribute
+                .concat(columnWhitespace.substring(attribute.length()));
             System.out.println(
                 String.format(
                     "    %s%s%s",

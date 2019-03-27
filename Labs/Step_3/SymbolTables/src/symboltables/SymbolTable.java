@@ -74,6 +74,7 @@ public class SymbolTable
         
         if (newSymbol.getType() == ESymbolType.PROCEDURE)
             addChildProcedureTable(newSymbol);
+        
     }
     
     private void addChildProcedureTable(Symbol procedureSymbol)

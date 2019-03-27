@@ -13,5 +13,8 @@ package symboltables.enums;
  */
 public enum ESymbolAttribute
 {
-    INTEGER
+    INT,
+    FLOAT,
+    STRING,
+    VOID
 }
