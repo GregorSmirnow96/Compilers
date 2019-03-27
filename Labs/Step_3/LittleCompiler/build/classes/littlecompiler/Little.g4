@@ -2,7 +2,7 @@ grammar Little;
 
 program: 'PROGRAM' id 'BEGIN' pgm_body 'END';
 id: IDENTIFIER;
-pgm_body: decl func_declarations;
+pgm_body: decl func_declarations | decl ;
 decl: string_decl decl | var_decl decl |;
 
 string_decl: 'STRING' id ':=' str ';';

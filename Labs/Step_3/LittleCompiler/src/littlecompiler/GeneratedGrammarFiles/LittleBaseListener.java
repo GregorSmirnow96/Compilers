@@ -157,7 +157,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterVar_decl(LittleParser.Var_declContext ctx)
     {
-        SymbolTable currentScopeTable = this.symbolTables.peek();
+        SymbolTable currentScope = this.symbolTables.peek();
         
         ParseTree varTypeNode = ctx.children.get(0);
         String varType = varTypeNode.getText();
@@ -170,7 +170,14 @@ public class LittleBaseListener implements LittleListener
         
         for (String varName : varNames)
         {
-            currentScopeTable.addSymbol(
+            
+            if (currentScope.getSymbolByName(varName) != null)
+            {
+                System.out.println("DECLARATION ERROR " + varName);
+                System.exit(0);
+            }
+            
+            currentScope.addSymbol(
                 new Symbol(
                     varName,
                     ESymbolType.VAR,
@@ -803,7 +810,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterIf_stmt(LittleParser.If_stmtContext ctx)
     {
-        String blockScopeName = "Block " + currentBlockCount++;
+        String blockScopeName = "BLOCK " + currentBlockCount++;
         
         SymbolTable currentScope = this.symbolTables.peek();
         SymbolTable newScope = new SymbolTable(blockScopeName);
@@ -828,7 +835,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterElse_part(LittleParser.Else_partContext ctx)
     {
-        String blockScopeName = "Block " + currentBlockCount++;
+        String blockScopeName = "BLOCK " + currentBlockCount++;
         
         SymbolTable currentScope = this.symbolTables.peek();
         SymbolTable newScope = new SymbolTable(blockScopeName);
@@ -893,7 +900,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterWhile_stmt(LittleParser.While_stmtContext ctx)
     {
-        String blockScopeName = "Block " + currentBlockCount++;
+        String blockScopeName = "BLOCK " + currentBlockCount++;
         
         SymbolTable currentScope = this.symbolTables.peek();
         SymbolTable newScope = new SymbolTable(blockScopeName);
