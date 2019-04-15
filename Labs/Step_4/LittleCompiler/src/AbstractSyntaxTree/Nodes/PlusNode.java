@@ -20,6 +20,8 @@ public class PlusNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        var tac = new TACLine();
+        tac.addElement("T1");
+        return tac;
     }
 }
