@@ -6,6 +6,8 @@
 package AbstractSyntaxTree.Nodes;
 
 import AbstractSyntaxTree.TACLine;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,14 +16,18 @@ import java.util.List;
  */
 public class PlusNode extends ASTNode
 {
-    protected final static int LEFT_OPERATOR_INDEX = 0;
-    protected final static int RIGHT_OPERATOR_INDEX = 1;
+    protected final static int LEFT_OPERAND_INDEX = 0;
+    protected final static int RIGHT_OPERAND_INDEX = 1;
 
     @Override
     public List<TACLine> generate3AC()
     {
+        List<TACLine> completeTAC = new ArrayList<>();
         var tac = new TACLine();
-        tac.addElement("T1");
-        return tac;
+        //tac.addElement(this.getType().toString());  //check on type of addition
+        tac.addElement(this.children.get(LEFT_OPERAND_INDEX).toString());
+        tac.addElement(this.children.get(RIGHT_OPERAND_INDEX).toString());
+        completeTAC.add(tac);
+        return completeTAC;
     }
 }
