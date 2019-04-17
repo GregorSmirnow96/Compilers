@@ -14,14 +14,13 @@ import java.util.List;
  *
  * @author Ken
  */
-public class WhileNode extends ASTNode
+public class IfNode
 {
     @Override
     public List<TACLine> generate3AC()
     {
-        List<TACLine> completeWhileTAC = new ArrayList<>();
-        var tac = new TACLine();
+        List<TACLine> completeIfTAC = new ArrayList<>();
 
-        return completeWhileTAC;
+        return completeIfTAC;
     }
 }

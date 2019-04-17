@@ -22,7 +22,7 @@ public class WriteNode extends ASTNode
         List<TACLine> completeWriteTAC = new ArrayList<>();
         var tac = new TACLine();
         //tac.addElement(this.getType().toString());  //check on this
-        tac.addElement(this.children.get([0].toString());
+        tac.addElement(this.children.get(0).toString());
         completeWriteTAC.add(tac);
         return completeWriteTAC;
     }
