@@ -22,12 +22,12 @@ public class PlusNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
-        List<TACLine> completeTAC = new ArrayList<>();
+        List<TACLine> completeAddTAC = new ArrayList<>();
         var tac = new TACLine();
         //tac.addElement(this.getType().toString());  //check on type of addition
         tac.addElement(this.children.get(LEFT_OPERAND_INDEX).toString());
         tac.addElement(this.children.get(RIGHT_OPERAND_INDEX).toString());
-        completeTAC.add(tac);
-        return completeTAC;
+        completeAddTAC.add(tac);
+        return completeAddTAC;
     }
 }

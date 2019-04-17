@@ -9,21 +9,11 @@ import AbstractSyntaxTree.TACLine;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- *
- * @author im5no
- */
-public class WriteNode extends ASTNode
+public class WhileNode extends ASTNode
 {
     @Override
     public List<TACLine> generate3AC()
     {
-        List<TACLine> completeWriteTAC = new ArrayList<>();
-        var tac = new TACLine();
-        //tac.addElement(this.getType().toString());  //check on this
-        tac.addElement(this.children.get([0].toString());
-        completeWriteTAC.add(tac);
-        return completeWriteTAC;
+        
     }
 }

@@ -22,12 +22,12 @@ public class MinusNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
-        List<TACLine> completeTAC = new ArrayList<>();
+        List<TACLine> completeSubTAC = new ArrayList<>();
         var tac = new TACLine();
         //tac.addElement(this.getType().toString());  //check on type of subtraction
         tac.addElement(this.children.get(LEFT_OPERATOR_INDEX).toString());
         tac.addElement(this.children.get(RIGHT_OPERATOR_INDEX).toString());
-        completeTAC.add(tac);
-        return completeTAC;
+        completeSubTAC.add(tac);
+        return completeSubTAC;
     }
 }
