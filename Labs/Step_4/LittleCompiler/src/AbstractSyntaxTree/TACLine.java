@@ -6,7 +6,6 @@
 package AbstractSyntaxTree;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -14,14 +13,14 @@ import java.util.List;
  */
 public class TACLine
 {
-    private final List<String> elements;
+    private final ArrayList<String> elements;
     
     public TACLine()
     {
         this.elements = new ArrayList<>();
     }
     
-    public List<String> getElements()
+    public ArrayList<String> getElements()
     {
         return elements;
     }
@@ -37,7 +36,7 @@ public class TACLine
         
         for (String element : elements)
         {
-             lineText = lineText.concat(element);
+            lineText = lineText.concat(element);
         }
         
         return lineText;

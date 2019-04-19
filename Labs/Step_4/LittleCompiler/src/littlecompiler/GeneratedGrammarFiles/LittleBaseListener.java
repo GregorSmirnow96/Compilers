@@ -8,9 +8,12 @@ import AbstractSyntaxTree.Nodes.ConditionNode;
 import AbstractSyntaxTree.Nodes.DeclarationNode;
 import AbstractSyntaxTree.Nodes.ElseNode;
 import AbstractSyntaxTree.Nodes.FloatLiteralNode;
+import AbstractSyntaxTree.Nodes.FunctionCallNode;
 import AbstractSyntaxTree.Nodes.Operators.DivideNode;
 import AbstractSyntaxTree.Nodes.FunctionNode;
 import AbstractSyntaxTree.Nodes.IfNode;
+import AbstractSyntaxTree.Nodes.InputParameterListNode;
+import AbstractSyntaxTree.Nodes.InputParameterNode;
 import AbstractSyntaxTree.Nodes.IntLiteralNode;
 import AbstractSyntaxTree.Nodes.Operators.EqualNode;
 import AbstractSyntaxTree.Nodes.Operators.GreaterThanNode;
@@ -21,6 +24,7 @@ import AbstractSyntaxTree.Nodes.Operators.MinusNode;
 import AbstractSyntaxTree.Nodes.Operators.MultiplyNode;
 import AbstractSyntaxTree.Nodes.Operators.NotEqualNode;
 import AbstractSyntaxTree.Nodes.Operators.PlusNode;
+import AbstractSyntaxTree.Nodes.ParameterListNode;
 import AbstractSyntaxTree.Nodes.ProgramNode;
 import AbstractSyntaxTree.Nodes.ReadNode;
 import AbstractSyntaxTree.Nodes.ReturnNode;
@@ -337,7 +341,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterParam_decl_list(LittleParser.Param_decl_listContext ctx)
     {
-        
+        this.ast.push(new InputParameterListNode());
     }
 
     /**
@@ -347,7 +351,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitParam_decl_list(LittleParser.Param_decl_listContext ctx)
     {
-        
+        this.ast.pop();
     }
 
     /**
@@ -357,10 +361,12 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterParam_decl(LittleParser.Param_declContext ctx)
     {
-        SymbolTable currentScope = this.symbolTables.peek();
-        
         String parameterType = ctx.children.get(0).getText();
         String parameterName = ctx.children.get(1).getText();
+        this.ast.push(new InputParameterNode(parameterName));
+        
+        SymbolTable currentScope = this.symbolTables.peek();
+        
         
         currentScope.addSymbol(
             new Symbol(
@@ -376,7 +382,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitParam_decl(LittleParser.Param_declContext ctx)
     {
-        
+        this.ast.pop();
     }
 
     /**
@@ -685,7 +691,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterCall_expr(LittleParser.Call_exprContext ctx)
     {
-        
+        this.ast.push(new FunctionCallNode(ctx.getText().replace("()", "")));
     }
 
     /**
@@ -695,7 +701,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitCall_expr(LittleParser.Call_exprContext ctx)
     {
-        
+        this.ast.pop();
     }
 
     /**
@@ -705,6 +711,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterExpr_list(LittleParser.Expr_listContext ctx)
     {
+        this.ast.push(new ParameterListNode());
     }
 
     /**
@@ -714,7 +721,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitExpr_list(LittleParser.Expr_listContext ctx)
     {
-        
+        this.ast.pop();
     }
 
     /**
