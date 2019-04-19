@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Ken
  */
-public class IfNode
+public class IfNode extends ASTNode
 {
     @Override
     public List<TACLine> generate3AC()

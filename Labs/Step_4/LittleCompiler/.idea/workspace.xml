@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffaab73-034e-4d12-9aa2-bf8a72c5e101" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WriteNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WriteNode.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,11 +45,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="483">
-                  <caret line="23" selection-start-line="23" selection-end-line="23" />
+                <state relative-caret-position="546">
+                  <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
                   <folding>
                     <element signature="e#0#334#0" expanded="true" />
                     <element signature="imports" expanded="true" />
@@ -58,11 +58,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="483">
-                  <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+                <state relative-caret-position="525">
+                  <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
                   <folding>
                     <element signature="e#0#360#0" expanded="true" />
                     <element signature="imports" expanded="true" />
@@ -111,8 +111,8 @@
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/AssignNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/DeclarationNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WriteNode.java" />
-        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" />
       </list>
     </option>
   </component>
@@ -151,12 +151,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="AbstractSyntaxTree" type="462c0819:PsiDirectoryNode" />
               <item name="Nodes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LittleCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LittleCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="littlecompiler" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,17 +388,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FloatLiteralNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="70" />
-          <folding>
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#702#703#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WriteNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -415,13 +398,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="525">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
           <folding>
-            <element signature="e#0#334#0" expanded="true" />
+            <element signature="e#0#360#0" expanded="true" />
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FloatLiteralNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="70" />
+          <folding>
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -436,12 +430,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java">
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="546">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
           <folding>
-            <element signature="e#0#360#0" expanded="true" />
+            <element signature="e#0#334#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
