@@ -36,9 +36,9 @@ public class PlusNode extends ASTNode
         else {
             tac.addElement("ADDF");
         }
-        
-        tac.addElement(this.children.get(LEFT_OPERAND_INDEX).toString());
-        tac.addElement(this.children.get(RIGHT_OPERAND_INDEX).toString());
+
+        tac.addElement(left.toString());
+        tac.addElement(right.toString());
         completeAddTAC.add(tac);
         return completeAddTAC;
     }

@@ -6,6 +6,7 @@
 package AbstractSyntaxTree.Nodes.Operators;
 
 import AbstractSyntaxTree.Nodes.ASTNode;
+import AbstractSyntaxTree.Nodes.IntLiteralNode;
 import AbstractSyntaxTree.TACLine;
 
 import java.util.ArrayList;
@@ -25,9 +26,17 @@ public class MultiplyNode extends ASTNode
     {
         List<TACLine> completeMultiplyTAC = new ArrayList<>();
         var tac = new TACLine();
-        //tac.addElement(this.getType().toString());  //Check on this
-        tac.addElement(this.children.get(LEFT_OPERATOR_INDEX).toString());
-        tac.addElement(this.children.get(RIGHT_OPERATOR_INDEX).toString());
+        var left = this.children.get(LEFT_OPERATOR_INDEX);
+        var right = this.children.get(RIGHT_OPERATOR_INDEX);
+        if (left instanceof IntLiteralNode || right instanceof IntLiteralNode){
+            tac.addElement("MULI");
+        }
+        else {
+            tac.addElement("MULF");
+        }
+        
+        tac.addElement(left.toString());
+        tac.addElement(right.toString());
         completeMultiplyTAC.add(tac);
         return completeMultiplyTAC;
     }

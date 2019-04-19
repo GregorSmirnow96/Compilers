@@ -6,6 +6,7 @@
 package AbstractSyntaxTree.Nodes.Operators;
 
 import AbstractSyntaxTree.Nodes.ASTNode;
+import AbstractSyntaxTree.Nodes.IntLiteralNode;
 import AbstractSyntaxTree.TACLine;
 
 import java.util.ArrayList;
@@ -25,9 +26,17 @@ public class MinusNode extends ASTNode
     {
         List<TACLine> completeSubTAC = new ArrayList<>();
         var tac = new TACLine();
-        //tac.addElement(this.getType().toString());  //check on type of subtraction
-        tac.addElement(this.children.get(LEFT_OPERATOR_INDEX).toString());
-        tac.addElement(this.children.get(RIGHT_OPERATOR_INDEX).toString());
+        var left = this.children.get(LEFT_OPERATOR_INDEX);
+        var right = this.children.get(RIGHT_OPERATOR_INDEX);
+        if (left instanceof IntLiteralNode || right instanceof IntLiteralNode){
+            tac.addElement("SUBI");
+        }
+        else {
+            tac.addElement("SUBF");
+        }
+
+        tac.addElement(left.toString());
+        tac.addElement(right.toString());
         completeSubTAC.add(tac);
         return completeSubTAC;
     }
