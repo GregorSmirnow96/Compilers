@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="3rd_Party_Dependencies">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/3rd_Party_Dependencies/SymbolTables.jar!/" />
+      <root url="jar://$PROJECT_DIR$/3rd_Party_Dependencies/antlr-4.7.1-complete.jar!/" />
+      <root url="jar://$PROJECT_DIR$/3rd_Party_Dependencies/junit-4.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

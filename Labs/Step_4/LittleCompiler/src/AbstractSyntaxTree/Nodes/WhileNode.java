@@ -6,17 +6,22 @@
 package AbstractSyntaxTree.Nodes;
 
 import AbstractSyntaxTree.TACLine;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author im5no
+ * @author Ken
  */
 public class WhileNode extends ASTNode
 {
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        List<TACLine> completeWhileTAC = new ArrayList<>();
+        var tac = new TACLine();
+
+        return completeWhileTAC;
     }
 }

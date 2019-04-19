@@ -6,6 +6,8 @@
 package AbstractSyntaxTree.Nodes;
 
 import AbstractSyntaxTree.TACLine;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +22,8 @@ public class IfNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        List<TACLine> completeIfTAC = new ArrayList<>();
+
+        return completeIfTAC;
     }
 }

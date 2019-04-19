@@ -6,6 +6,8 @@
 package AbstractSyntaxTree.Nodes;
 
 import AbstractSyntaxTree.TACLine;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,10 +16,20 @@ import java.util.List;
  */
 public class DeclarationNode extends ASTNode
 {
+    protected final static int INT_VALUE_INDEX = 0;
+    protected final static int VAR_VALUE_INDEX = 1;
+
     // This shouldn't require code generation (I don't think).
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        List<TACLine> completeDelcTAC = new ArrayList<>();
+        var tac = new TACLine();
+        tac.addElement(this.children.get(INT_VALUE_INDEX).toString());  //val to temp
+        //tac.addElement(this.getType().toString());    //Check on this, probably STOREI
+        //tac.addElement(this.getType().toString());    //Check on this, probably STOREI
+        tac.addElement(this.children.get(VAR_VALUE_INDEX).toString());  //temp to var
+        completeDelcTAC.add(tac);
+        return completeDelcTAC;
     }
 }
