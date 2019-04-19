@@ -2,39 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffaab73-034e-4d12-9aa2-bf8a72c5e101" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/ConditionNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/ElseNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/EqualNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanOrEqualToNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/StatementListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/LittleCompiler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Step_3/LittleCompiler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/LittleCompiler/src/littlecompiler/GeneratedGrammarFiles/Little.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/LittleCompiler/src/littlecompiler/GeneratedGrammarFiles/Little.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/LittleCompiler/src/littlecompiler/GeneratedGrammarFiles/LittleBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/LittleCompiler/src/littlecompiler/GeneratedGrammarFiles/LittleLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/LittleCompiler/src/littlecompiler/GeneratedGrammarFiles/LittleLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/LittleCompiler/src/littlecompiler/GeneratedGrammarFiles/LittleLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/LittleCompiler/src/littlecompiler/GeneratedGrammarFiles/LittleListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/LittleCompiler/src/littlecompiler/GeneratedGrammarFiles/LittleParser.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FunctionCallNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs/fibonacci.micro" beforeDir="false" afterPath="$PROJECT_DIR$/inputs/fibonacci.micro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/AssignNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/AssignNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/MinusNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MinusNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/PlusNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/littlecompiler/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/littlecompiler/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/Little.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/Little.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/LittleBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/LittleBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/LittleListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/LittleListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/LittleParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/LittleParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/littlecompiler/Little.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/littlecompiler/Little.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,26 +24,83 @@
     <favorites_list name="LittleCompiler" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="189">
+                  <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="462">
+                  <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="567">
+                  <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/VariableNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="504">
+                  <caret line="34" column="1" lean-forward="true" selection-end-line="34" selection-end-column="1" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#706#707#0" expanded="true" />
+                    <element signature="e#783#784#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FunctionNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+                  <folding>
+                    <element signature="e#447#448#0" expanded="true" />
+                    <element signature="e#524#525#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FunctionCallNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="441">
+                  <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#783#784#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -77,6 +108,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Enter</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -92,6 +128,13 @@
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WriteNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/AddNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FunctionCallNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java" />
       </list>
     </option>
   </component>
@@ -117,11 +160,6 @@
             <path>
               <item name="LittleCompiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="LittleCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LittleCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LittleCompiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -139,7 +177,11 @@
             </path>
             <path>
               <item name="LittleCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="LittleCompiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AbstractSyntaxTree" type="462c0819:PsiDirectoryNode" />
+              <item name="Nodes" type="462c0819:PsiDirectoryNode" />
+              <item name="Operators" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -166,6 +208,9 @@
       </list>
     </option>
   </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INTERFACES" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -188,8 +233,8 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" weight="0.32960597" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49953747" visible="true" weight="0.1799787" />
-      <window_info id="Structure" order="6" sideWeight="0.50046253" side_tool="true" visible="true" weight="0.1799787" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.8334875" visible="true" weight="0.1799787" />
+      <window_info id="Structure" order="6" sideWeight="0.16651249" side_tool="true" weight="0.1799787" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" />
@@ -231,9 +276,6 @@
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/littlecompiler/Little.g4">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/AST.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -297,29 +339,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#404#405#0" expanded="true" />
             <element signature="e#481#482#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/VariableNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FunctionNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -408,6 +427,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/AddNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -415,10 +461,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MinusNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        <state relative-caret-position="189">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FunctionNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding>
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/VariableNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="34" column="1" lean-forward="true" selection-end-line="34" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FunctionCallNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/littlecompiler/Little.g4">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/LittleBaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="60" column="31" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
         </state>
       </provider>
     </entry>

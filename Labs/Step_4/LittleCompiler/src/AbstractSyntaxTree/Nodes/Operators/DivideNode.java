@@ -7,6 +7,8 @@ package AbstractSyntaxTree.Nodes.Operators;
 
 import AbstractSyntaxTree.Nodes.ASTNode;
 import AbstractSyntaxTree.TACLine;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +23,12 @@ public class DivideNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        List<TACLine> completeDivideTAC = new ArrayList<>();
+        var tac =  new TACLine();
+        //tac.addElement(this.getType().toString());  //Check on this.
+        tac.addElement(this.children.get(LEFT_OPERATOR_INDEX).toString());
+        tac.addElement(this.children.get(RIGHT_OPERATOR_INDEX).toString());
+        completeDivideTAC.add(tac);
+        return completeDivideTAC;
     }
 }

@@ -6,8 +6,11 @@
 package AbstractSyntaxTree.Nodes.Operators;
 
 import AbstractSyntaxTree.Nodes.ASTNode;
+import AbstractSyntaxTree.Nodes.IntLiteralNode;
 import AbstractSyntaxTree.TACLine;
+import org.antlr.v4.tool.LeftRecursionCyclesMessage;
 
+import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +28,15 @@ public class PlusNode extends ASTNode
     {
         List<TACLine> completeAddTAC = new ArrayList<>();
         var tac = new TACLine();
-        //tac.addElement(this.getType().toString());  //check on type of addition
+        var left = this.children.get(LEFT_OPERAND_INDEX);
+        var right = this.children.get(RIGHT_OPERAND_INDEX);
+        if (left instanceof IntLiteralNode || right instanceof IntLiteralNode){
+            tac.addElement("ADDI");
+        }
+        else {
+            tac.addElement("ADDF");
+        }
+        
         tac.addElement(this.children.get(LEFT_OPERAND_INDEX).toString());
         tac.addElement(this.children.get(RIGHT_OPERAND_INDEX).toString());
         completeAddTAC.add(tac);
