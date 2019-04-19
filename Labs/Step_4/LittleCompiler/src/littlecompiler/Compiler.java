@@ -5,14 +5,8 @@
  */
 package littlecompiler;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.List;
 import littlecompiler.GeneratedGrammarFiles.LittleBaseListener;
 import littlecompiler.GeneratedGrammarFiles.LittleLexer;
-import org.antlr.v4.runtime.Token;
 import littlecompiler.GeneratedGrammarFiles.LittleParser;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;

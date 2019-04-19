@@ -12,11 +12,8 @@ import java.util.List;
  *
  * @author im5no
  */
-public class PlusNode extends ASTNode
+public class WhileNode extends ASTNode
 {
-    protected final static int LEFT_OPERATOR_INDEX = 0;
-    protected final static int RIGHT_OPERATOR_INDEX = 1;
-
     @Override
     public List<TACLine> generate3AC()
     {

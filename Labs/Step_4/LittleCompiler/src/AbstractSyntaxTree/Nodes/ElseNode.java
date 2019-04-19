@@ -12,11 +12,11 @@ import java.util.List;
  *
  * @author im5no
  */
-public class MinusNode extends ASTNode
+public class ElseNode extends ASTNode
 {
-    protected final static int LEFT_OPERATOR_INDEX = 0;
-    protected final static int RIGHT_OPERATOR_INDEX = 1;
-
+    protected final static int CONDITION_INDEX = 0;
+    protected final static int STATEMENT_LIST_INDEX = 1;
+    
     @Override
     public List<TACLine> generate3AC()
     {

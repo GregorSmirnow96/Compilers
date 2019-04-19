@@ -4,13 +4,35 @@ package littlecompiler.GeneratedGrammarFiles;
 
 import AbstractSyntaxTree.AST;
 import AbstractSyntaxTree.Nodes.AssignNode;
+import AbstractSyntaxTree.Nodes.ConditionNode;
 import AbstractSyntaxTree.Nodes.DeclarationNode;
+import AbstractSyntaxTree.Nodes.ElseNode;
+import AbstractSyntaxTree.Nodes.FloatLiteralNode;
+import AbstractSyntaxTree.Nodes.Operators.DivideNode;
 import AbstractSyntaxTree.Nodes.FunctionNode;
+import AbstractSyntaxTree.Nodes.IfNode;
+import AbstractSyntaxTree.Nodes.IntLiteralNode;
+import AbstractSyntaxTree.Nodes.Operators.EqualNode;
+import AbstractSyntaxTree.Nodes.Operators.GreaterThanNode;
+import AbstractSyntaxTree.Nodes.Operators.GreaterThanOrEqualToNode;
+import AbstractSyntaxTree.Nodes.Operators.LessThanNode;
+import AbstractSyntaxTree.Nodes.Operators.LessThanOrEqualToNode;
+import AbstractSyntaxTree.Nodes.Operators.MinusNode;
+import AbstractSyntaxTree.Nodes.Operators.MultiplyNode;
+import AbstractSyntaxTree.Nodes.Operators.NotEqualNode;
+import AbstractSyntaxTree.Nodes.Operators.PlusNode;
 import AbstractSyntaxTree.Nodes.ProgramNode;
 import AbstractSyntaxTree.Nodes.ReadNode;
 import AbstractSyntaxTree.Nodes.ReturnNode;
+import AbstractSyntaxTree.Nodes.StatementListNode;
+import AbstractSyntaxTree.Nodes.VariableNode;
+import AbstractSyntaxTree.Nodes.WhileNode;
 import AbstractSyntaxTree.Nodes.WriteNode;
+import AbstractSyntaxTree.TACLine;
+import java.util.List;
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -50,7 +72,8 @@ public class LittleBaseListener implements LittleListener
     @Override public void exitProgram(LittleParser.ProgramContext ctx)
     {
         this.ast.pop();
-        int i = 0;
+        List<TACLine> linesOfCode = this.ast.generate3AC();
+        linesOfCode.forEach(line -> System.out.println(line.getLineText()));
     }
         
     /**
@@ -69,7 +92,6 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitId(LittleParser.IdContext ctx)
     {
-        
     }
     
     /**
@@ -259,7 +281,23 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterId_list(LittleParser.Id_listContext ctx)
     {
+        ParseTree firstVariableTree = ctx.children.get(0);
+        String firstVariableName = firstVariableTree.getText();
+        this.ast.push(new VariableNode(firstVariableName));
+        this.ast.pop();
         
+        ParseTree followingVariablesTree = ctx.children.get(1);
+        int childCount = followingVariablesTree.getChildCount();
+        while (childCount > 1)
+        {
+            String nextVariableName = followingVariablesTree
+                .getChild(1)
+                .getText();
+            this.ast.push(new VariableNode(nextVariableName));
+            this.ast.pop();
+            followingVariablesTree = followingVariablesTree.getChild(2);
+            childCount = followingVariablesTree.getChildCount();
+        }
     }
 
     /**
@@ -397,7 +435,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitFunc_declarations(LittleParser.Func_declarationsContext ctx)
     {
-        
+        this.symbolTables.pop();
     }
 
     /**
@@ -445,7 +483,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterStmt_list(LittleParser.Stmt_listContext ctx)
     {
-        
+        this.ast.push(new StatementListNode());
     }
 
     /**
@@ -455,7 +493,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitStmt_list(LittleParser.Stmt_listContext ctx)
     {
-        
+        this.ast.pop();
     }
 
     /**
@@ -604,7 +642,26 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterExpr(LittleParser.ExprContext ctx)
     {
-        
+        boolean expressionIsAnOperation = ctx.getChildCount() == 3;
+        if (expressionIsAnOperation)
+        {
+            String operator = ctx.children.get(1).getText();
+            switch (operator)
+            {
+                case "+":
+                    this.ast.push(new PlusNode());
+                    break;
+                case "-":
+                    this.ast.push(new MinusNode());
+                    break;
+                case "*":
+                    this.ast.push(new MultiplyNode());
+                    break;
+                case "/":
+                    this.ast.push(new DivideNode());
+                    break;
+            }
+        }
     }
 
     /**
@@ -614,87 +671,11 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitExpr(LittleParser.ExprContext ctx)
     {
-        
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void enterExpr_prefix(LittleParser.Expr_prefixContext ctx)
-    {
-        
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void exitExpr_prefix(LittleParser.Expr_prefixContext ctx)
-    {
-        
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void enterFactor(LittleParser.FactorContext ctx)
-    {
-        
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void exitFactor(LittleParser.FactorContext ctx)
-    {
-        
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void enterFactor_prefix(LittleParser.Factor_prefixContext ctx)
-    {
-        
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void exitFactor_prefix(LittleParser.Factor_prefixContext ctx)
-    {
-        
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void enterPostfix_expr(LittleParser.Postfix_exprContext ctx)
-    {
-        
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void exitPostfix_expr(LittleParser.Postfix_exprContext ctx)
-    {
-        
+        boolean expressionIsAnOperation = ctx.getChildCount() == 3;
+        if (expressionIsAnOperation)
+        {
+            this.ast.pop();
+        }
     }
 
     /**
@@ -724,7 +705,6 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterExpr_list(LittleParser.Expr_listContext ctx)
     {
-        
     }
 
     /**
@@ -764,7 +744,23 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterPrimary(LittleParser.PrimaryContext ctx)
     {
+        Pattern pattern = Pattern.compile("[0-9]");
+        String primaryText = ctx.getText();
+        Matcher matcher = pattern.matcher(ctx.getText());
+        if (matcher.matches())
+        {
+            this.ast.push(new IntLiteralNode(Integer.parseInt(ctx.getText())));
+            return;
+        }
         
+        pattern = Pattern.compile("[0-9][.][0-9]");
+        matcher = pattern.matcher(ctx.getText());
+        if (matcher.matches())
+            this.ast.push(
+                new FloatLiteralNode(
+                    Float.parseFloat(ctx.getText())));
+        else
+            this.ast.push(new VariableNode(ctx.getText()));
     }
 
     /**
@@ -774,7 +770,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitPrimary(LittleParser.PrimaryContext ctx)
     {
-        
+        this.ast.pop();
     }
 
     /**
@@ -804,7 +800,6 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterMulop(LittleParser.MulopContext ctx)
     {
-        
     }
 
     /**
@@ -814,7 +809,6 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitMulop(LittleParser.MulopContext ctx)
     {
-        
     }
 
     /**
@@ -824,6 +818,8 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterIf_stmt(LittleParser.If_stmtContext ctx)
     {
+        this.ast.push(new IfNode());
+        
         String blockScopeName = "BLOCK " + currentBlockCount++;
         
         SymbolTable currentScope = this.symbolTables.peek();
@@ -839,6 +835,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitIf_stmt(LittleParser.If_stmtContext ctx)
     {
+        this.ast.pop();
         this.symbolTables.pop();
     }
 
@@ -849,6 +846,8 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterElse_part(LittleParser.Else_partContext ctx)
     {
+        this.ast.push(new ElseNode());
+        
         String blockScopeName = "BLOCK " + currentBlockCount++;
         
         SymbolTable currentScope = this.symbolTables.peek();
@@ -864,6 +863,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitElse_part(LittleParser.Else_partContext ctx)
     {
+        this.ast.pop();
         this.symbolTables.pop();        
     }
 
@@ -874,7 +874,40 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterCond(LittleParser.CondContext ctx)
     {
+        this.ast.push(new ConditionNode());
+        String operator = ctx.children.get(1).getText();
         
+        switch (operator)
+        {
+            case ">":
+                this.ast.push(new GreaterThanNode());
+                break;
+            case ">=":
+                this.ast.push(new GreaterThanOrEqualToNode());
+                break;
+            case "<":
+                this.ast.push(new LessThanNode());
+                break;
+            case "<=":
+                this.ast.push(new LessThanOrEqualToNode());
+                break;
+            case "=":
+                this.ast.push(new EqualNode());
+                break;
+            case "!=":
+                this.ast.push(new NotEqualNode());
+                break;
+            default:
+                break;
+        }
+        
+        /* Get ctx.children.get(1) and ast.push the corresponding node.
+         * 
+         * Implement while loops.
+         * 
+         * Verify StatementListNode is instantiated for functions,
+         * if blocks, and while loops.
+         */
     }
 
     /**
@@ -884,7 +917,8 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitCond(LittleParser.CondContext ctx)
     {
-        
+        this.ast.pop();
+        this.ast.pop();
     }
 
     /**
@@ -914,6 +948,8 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterWhile_stmt(LittleParser.While_stmtContext ctx)
     {
+        this.ast.push(new WhileNode());
+        
         String blockScopeName = "BLOCK " + currentBlockCount++;
         
         SymbolTable currentScope = this.symbolTables.peek();
@@ -929,7 +965,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitWhile_stmt(LittleParser.While_stmtContext ctx)
     {
-        this.symbolTables.pop();
+        this.ast.pop();
     }
 
     /**
@@ -970,5 +1006,69 @@ public class LittleBaseListener implements LittleListener
     @Override public void visitErrorNode(ErrorNode node)
     {
         
+    }
+
+    @Override
+    public void enterAdd_minus_expression(LittleParser.Add_minus_expressionContext ctx)
+    {
+        boolean nodeIsAddop = ctx.getChildCount() == 3;
+        if (nodeIsAddop)
+        {
+            String operator = ctx.children.get(1).getText();
+            this.ast.push(
+                operator.equals("+")
+                    ? new PlusNode()
+                    : new MinusNode());
+        }
+    }
+
+    @Override
+    public void exitAdd_minus_expression(LittleParser.Add_minus_expressionContext ctx)
+    {
+        boolean nodeIsAddop = ctx.getChildCount() == 3;
+        if (nodeIsAddop)
+            this.ast.pop();
+    }
+
+    @Override
+    public void enterMultiply_divide_expression(LittleParser.Multiply_divide_expressionContext ctx)
+    {
+        boolean nodeIsMulop = ctx.getChildCount() == 3;
+        if (nodeIsMulop)
+        {
+            String operator = ctx.children.get(1).getText();
+            this.ast.push(
+                operator.equals("*")
+                    ? new MultiplyNode()
+                    : new DivideNode());
+        }
+    }
+
+    @Override
+    public void exitMultiply_divide_expression(LittleParser.Multiply_divide_expressionContext ctx)
+    {
+        boolean nodeIsMulop = ctx.getChildCount() == 3;
+        if (nodeIsMulop)
+            this.ast.pop();
+    }
+
+    @Override
+    public void enterExpression_component(LittleParser.Expression_componentContext ctx)
+    {
+    }
+
+    @Override
+    public void exitExpression_component(LittleParser.Expression_componentContext ctx)
+    {
+    }
+
+    @Override
+    public void enterStmt_list_tail(LittleParser.Stmt_list_tailContext ctx)
+    {
+    }
+
+    @Override
+    public void exitStmt_list_tail(LittleParser.Stmt_list_tailContext ctx)
+    {
     }
 }

@@ -12,10 +12,10 @@ import java.util.List;
  *
  * @author im5no
  */
-public class AssignNode extends ASTNode
+public class IfNode extends ASTNode
 {
-    protected final static int VARIABLE_INDEX = 0;
-    protected final static int EXPRESSION_INDEX = 1;
+    protected final static int CONDITION_INDEX = 0;
+    protected final static int STATEMENT_LIST_INDEX = 1;
 
     @Override
     public List<TACLine> generate3AC()

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AbstractSyntaxTree.Nodes;
+package AbstractSyntaxTree.Nodes.Operators;
 
+import AbstractSyntaxTree.Nodes.ASTNode;
 import AbstractSyntaxTree.TACLine;
 import java.util.List;
 
@@ -12,10 +13,10 @@ import java.util.List;
  *
  * @author im5no
  */
-public class AssignNode extends ASTNode
+public class GreaterThanNode extends ASTNode
 {
-    protected final static int VARIABLE_INDEX = 0;
-    protected final static int EXPRESSION_INDEX = 1;
+    protected final static int LEFT_OPERATOR_INDEX = 0;
+    protected final static int RIGHT_OPERATOR_INDEX = 1;
 
     @Override
     public List<TACLine> generate3AC()

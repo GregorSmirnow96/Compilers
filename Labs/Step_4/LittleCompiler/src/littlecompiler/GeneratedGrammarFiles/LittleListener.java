@@ -189,6 +189,16 @@ public interface LittleListener extends ParseTreeListener {
 	 */
 	void exitStmt_list(LittleParser.Stmt_listContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LittleParser#stmt_list_tail}.
+	 * @param ctx the parse tree
+	 */
+	void enterStmt_list_tail(LittleParser.Stmt_list_tailContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LittleParser#stmt_list_tail}.
+	 * @param ctx the parse tree
+	 */
+	void exitStmt_list_tail(LittleParser.Stmt_list_tailContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LittleParser#stmt}.
 	 * @param ctx the parse tree
 	 */
@@ -269,45 +279,35 @@ public interface LittleListener extends ParseTreeListener {
 	 */
 	void exitExpr(LittleParser.ExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LittleParser#expr_prefix}.
+	 * Enter a parse tree produced by {@link LittleParser#add_minus_expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpr_prefix(LittleParser.Expr_prefixContext ctx);
+	void enterAdd_minus_expression(LittleParser.Add_minus_expressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LittleParser#expr_prefix}.
+	 * Exit a parse tree produced by {@link LittleParser#add_minus_expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpr_prefix(LittleParser.Expr_prefixContext ctx);
+	void exitAdd_minus_expression(LittleParser.Add_minus_expressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LittleParser#factor}.
+	 * Enter a parse tree produced by {@link LittleParser#multiply_divide_expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterFactor(LittleParser.FactorContext ctx);
+	void enterMultiply_divide_expression(LittleParser.Multiply_divide_expressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LittleParser#factor}.
+	 * Exit a parse tree produced by {@link LittleParser#multiply_divide_expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitFactor(LittleParser.FactorContext ctx);
+	void exitMultiply_divide_expression(LittleParser.Multiply_divide_expressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LittleParser#factor_prefix}.
+	 * Enter a parse tree produced by {@link LittleParser#expression_component}.
 	 * @param ctx the parse tree
 	 */
-	void enterFactor_prefix(LittleParser.Factor_prefixContext ctx);
+	void enterExpression_component(LittleParser.Expression_componentContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LittleParser#factor_prefix}.
+	 * Exit a parse tree produced by {@link LittleParser#expression_component}.
 	 * @param ctx the parse tree
 	 */
-	void exitFactor_prefix(LittleParser.Factor_prefixContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link LittleParser#postfix_expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterPostfix_expr(LittleParser.Postfix_exprContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LittleParser#postfix_expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitPostfix_expr(LittleParser.Postfix_exprContext ctx);
+	void exitExpression_component(LittleParser.Expression_componentContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LittleParser#call_expr}.
 	 * @param ctx the parse tree
