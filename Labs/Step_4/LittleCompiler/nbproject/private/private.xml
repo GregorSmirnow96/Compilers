@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/LessThanNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/IntLiteralNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/VariableNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/littlecompiler/GeneratedGrammarFiles/LittleBaseListener.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanOrEqualToNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/MinusNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/StringLiteralNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/IfNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/littlecompiler/LittleCompiler.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/FloatLiteralNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/StatementListNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/WhileNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/ReadNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/ASTNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/FunctionNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/ProgramNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/WriteNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/EqualNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/ConditionNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/ReturnNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/ElseNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/DeclarationNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/AbstractSyntaxTree/Nodes/AssignNode.java</file>
+            <file>file:/C:/Users/im5no/Documents/Compilers/GitRepo/Compilers/Labs/Step_4/LittleCompiler/src/littlecompiler/Little.g4</file>
+        </group>
+    </open-files>
+</project-private>
