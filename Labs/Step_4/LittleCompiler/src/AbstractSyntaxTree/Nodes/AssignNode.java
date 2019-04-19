@@ -20,12 +20,6 @@ public class AssignNode extends ASTNode
     protected final static int EXPRESSION_INDEX = 1;
 
     @Override
-    public void addChild(ASTNode childNode)
-    {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeAssignTAC = new ArrayList<>();

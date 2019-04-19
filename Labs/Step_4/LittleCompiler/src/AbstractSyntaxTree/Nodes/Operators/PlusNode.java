@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AbstractSyntaxTree.Nodes;
+package AbstractSyntaxTree.Nodes.Operators;
 
+import AbstractSyntaxTree.Nodes.ASTNode;
 import AbstractSyntaxTree.TACLine;
 
 import java.util.ArrayList;

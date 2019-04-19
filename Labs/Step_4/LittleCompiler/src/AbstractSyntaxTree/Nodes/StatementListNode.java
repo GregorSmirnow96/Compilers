@@ -6,24 +6,17 @@
 package AbstractSyntaxTree.Nodes;
 
 import AbstractSyntaxTree.TACLine;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author im5no
  */
-public class IfNode extends ASTNode
+public class StatementListNode extends ASTNode
 {
-    protected final static int CONDITION_INDEX = 0;
-    protected final static int STATEMENT_LIST_INDEX = 1;
-
     @Override
     public List<TACLine> generate3AC()
     {
-        List<TACLine> completeIfTAC = new ArrayList<>();
-
-        return completeIfTAC;
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

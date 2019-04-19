@@ -14,14 +14,13 @@ BEGIN
 			RETURN 1;
 	    ENDIF
 	END
-	
-	
-	FUNCTION VOID main ()
-	BEGIN
+
+    FUNCTION INT a ()
+    BEGIN
 		INT i, end, result;
 		WRITE(input);
 		READ(end);
-
+        
 		i := 0;
 		WHILE (i != end)
             INT dummy;
@@ -35,7 +34,5 @@ BEGIN
             FLOAT test3;
             STRING test4 := "Testing";
 		ENDWHILE
-
-	END
-
+    END
 END
