@@ -5,6 +5,7 @@
  */
 package AbstractSyntaxTree.Nodes;
 
+import AbstractSyntaxTree.Labels;
 import AbstractSyntaxTree.TACLine;
 
 import java.util.ArrayList;
@@ -22,12 +23,14 @@ public class IfNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
+        Labels label = Labels.getInstance();
         List<TACLine> completeIfTAC = new ArrayList<>();
         var tac = new TACLine();
         tac.addElement("GEI");  //Seems to me the same as Greater and Greater or Equal
         tac.addElement(this.children.get(CONDITION_INDEX).toString());
+        // maybe this next line should call StatementListNode
         tac.addElement(this.children.get(STATEMENT_LIST_INDEX).toString());
-        tac.addElement("label#");   //Need to check on labels and numbering
+        tac.addElement(label.getLabel());
         completeIfTAC.add(tac);
         return completeIfTAC;
     }

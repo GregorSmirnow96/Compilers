@@ -5,6 +5,7 @@
  */
 package AbstractSyntaxTree.Nodes;
 
+import AbstractSyntaxTree.Labels;
 import AbstractSyntaxTree.TACLine;
 
 import java.util.ArrayList;
@@ -19,9 +20,14 @@ public class WhileNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
+        Labels label = Labels.getInstance();
+        var whileLabel = label.getLabel();
         List<TACLine> completeWhileTAC = new ArrayList<>();
         var tac = new TACLine();
-
+        tac.addElement(whileLabel);
+        //need a conditional for the JUMP
+        tac.addElement("JUMP " + whileLabel);
+        completeWhileTAC.add(tac);
         return completeWhileTAC;
     }
 }

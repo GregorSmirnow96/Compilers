@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffaab73-034e-4d12-9aa2-bf8a72c5e101" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/ElseNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/ElseNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/EqualNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/EqualNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanOrEqualToNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanOrEqualToNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,11 +31,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/ElseNode.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="126">
                   <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="189">
+                  <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -60,11 +65,35 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+                <state relative-caret-position="189">
+                  <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+                  <folding>
+                    <element signature="e#0#963#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                  <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Labels.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="294">
+                  <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -97,7 +126,6 @@
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/AssignNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/DeclarationNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WriteNode.java" />
-        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/AddNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FunctionCallNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java" />
@@ -110,16 +138,19 @@
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.java" />
-        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" />
         <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/ElseNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Labels.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/TempararyRegisters.java" />
+        <option value="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1920" />
-    <option name="y" value="143" />
+    <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1173" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -418,16 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/FunctionNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -521,27 +542,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="26" column="86" selection-start-line="26" selection-start-column="86" selection-end-line="26" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -556,6 +560,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#963#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Labels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/TempararyRegisters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
