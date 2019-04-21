@@ -6,6 +6,8 @@
 package AbstractSyntaxTree.Nodes;
 
 import AbstractSyntaxTree.TACLine;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +22,13 @@ public class ElseNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        List<TACLine> completeElseTAC = new ArrayList<>();
+        var tac = new TACLine();
+        tac.addElement("");
+        tac.addElement(this.children.get(CONDITION_INDEX).toString());
+        tac.addElement(this.children.get(STATEMENT_LIST_INDEX).toString());
+
+        completeElseTAC.add(tac);
+        return completeElseTAC;
     }
 }

@@ -7,6 +7,8 @@ package AbstractSyntaxTree.Nodes.Operators;
 
 import AbstractSyntaxTree.Nodes.ASTNode;
 import AbstractSyntaxTree.TACLine;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +23,12 @@ public class GreaterThanOrEqualToNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        List<TACLine> completeGreaterOrEqTAC = new ArrayList<>();
+        var tac = new TACLine();
+        tac.addElement("GEI");
+        tac.addElement(this.children.get(LEFT_OPERATOR_INDEX).toString());
+        tac.addElement(this.children.get(RIGHT_OPERATOR_INDEX).toString());
+        completeGreaterOrEqTAC.add(tac);
+        return completeGreaterOrEqTAC;
     }
 }

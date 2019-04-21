@@ -23,7 +23,12 @@ public class IfNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeIfTAC = new ArrayList<>();
-
+        var tac = new TACLine();
+        tac.addElement("GEI");  //Seems to me the same as Greater and Greater or Equal
+        tac.addElement(this.children.get(CONDITION_INDEX).toString());
+        tac.addElement(this.children.get(STATEMENT_LIST_INDEX).toString());
+        tac.addElement("label#");   //Need to check on labels and numbering
+        completeIfTAC.add(tac);
         return completeIfTAC;
     }
 }

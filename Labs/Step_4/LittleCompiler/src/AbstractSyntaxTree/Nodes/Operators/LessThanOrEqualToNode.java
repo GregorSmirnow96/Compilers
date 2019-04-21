@@ -6,6 +6,7 @@
 package AbstractSyntaxTree.Nodes.Operators;
 
 import AbstractSyntaxTree.Nodes.ASTNode;
+import AbstractSyntaxTree.Nodes.IntLiteralNode;
 import AbstractSyntaxTree.TACLine;
 
 import java.util.ArrayList;
@@ -25,7 +26,10 @@ public class LessThanOrEqualToNode extends ASTNode
     {
         List<TACLine> completeLessOrEqTAC = new ArrayList<>();
         var tac = new TACLine();
-
+        tac.addElement("LEI");
+        tac.addElement(this.children.get(LEFT_OPERATOR_INDEX).toString());
+        tac.addElement(this.children.get(RIGHT_OPERATOR_INDEX).toString());
+        completeLessOrEqTAC.add(tac);
         return completeLessOrEqTAC;
     }
 }
