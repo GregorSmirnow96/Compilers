@@ -29,10 +29,10 @@ public class MultiplyNode extends ASTNode
         var left = this.children.get(LEFT_OPERATOR_INDEX);
         var right = this.children.get(RIGHT_OPERATOR_INDEX);
         if (left instanceof IntLiteralNode || right instanceof IntLiteralNode){
-            tac.addElement("MULI");
+            tac.addElement("MULTI");
         }
         else {
-            tac.addElement("MULF");
+            tac.addElement("MULTF");
         }
         
         tac.addElement(left.toString());

@@ -26,6 +26,7 @@ public class AssignNode extends ASTNode
         var tac = new TACLine();
         //tac.addElement(this.getType().toString());  //Check on this
         tac.addElement(this.children.get(VARIABLE_INDEX).toString());
+        //probably need to send the expression index value to and expressionNode
         tac.addElement(this.children.get(EXPRESSION_INDEX).toString());
         completeAssignTAC.add(tac);
         return completeAssignTAC;
