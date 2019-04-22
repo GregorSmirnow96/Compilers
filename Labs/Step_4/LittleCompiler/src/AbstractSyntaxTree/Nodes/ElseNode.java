@@ -5,7 +5,10 @@
  */
 package AbstractSyntaxTree.Nodes;
 
+import AbstractSyntaxTree.Labels;
 import AbstractSyntaxTree.TACLine;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +23,15 @@ public class ElseNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Labels label = Labels.getInstance();
+        String elseLabel = label.getLabel();
+        List<TACLine> completeElseTAC = new ArrayList<>();
+        TACLine tac = new TACLine();
+        tac.addElement("Label " + elseLabel);
+        tac.addElement(this.children.get(CONDITION_INDEX).toString());
+        tac.addElement(this.children.get(STATEMENT_LIST_INDEX).toString());
+
+        completeElseTAC.add(tac);
+        return completeElseTAC;
     }
 }

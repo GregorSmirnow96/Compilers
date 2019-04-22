@@ -6,6 +6,8 @@
 package AbstractSyntaxTree.Nodes;
 
 import AbstractSyntaxTree.TACLine;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,9 +16,22 @@ import java.util.List;
  */
 public class ReadNode extends ASTNode
 {
+    protected final static int READ_INDEX = 0;
+
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        List<TACLine> completeReadTAC = new ArrayList<>();
+        TACLine tac = new TACLine();
+        ASTNode read = this.children.get(READ_INDEX);
+        if (read instanceof IntLiteralNode) {
+            tac.addElement("READI");
+        }
+        else {
+            tac.addElement("READF");
+        }
+        tac.addElement(read.toString());
+        completeReadTAC.add(tac);
+        return completeReadTAC;
     }
 }

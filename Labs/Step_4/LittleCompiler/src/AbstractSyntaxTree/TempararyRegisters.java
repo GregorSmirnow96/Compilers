@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
  * Singleton for keeping track of temporary register numbers
  */
 public class TempararyRegisters {
-    private static final TempararyRegisters instance;
+    private static TempararyRegisters instance;
     private int a = 0;
     private LinkedHashMap<String, String> lHM = new LinkedHashMap<>();
 
@@ -20,7 +20,7 @@ public class TempararyRegisters {
         lHM.put(key, value);
         return value;
     }
-
+    
     public String getTempReg() {
         a++;
         String value = "$T".concat(Integer.toString(a));

@@ -25,7 +25,11 @@ public class LessThanOrEqualToNode extends ASTNode
     {
         List<TACLine> completeLessOrEqTAC = new ArrayList<>();
         TACLine tac = new TACLine();
-
+        
+        tac.addElement("LEI");
+        tac.addElement(this.children.get(LEFT_OPERATOR_INDEX).toString());
+        tac.addElement(this.children.get(RIGHT_OPERATOR_INDEX).toString());
+        completeLessOrEqTAC.add(tac);
         return completeLessOrEqTAC;
     }
 }

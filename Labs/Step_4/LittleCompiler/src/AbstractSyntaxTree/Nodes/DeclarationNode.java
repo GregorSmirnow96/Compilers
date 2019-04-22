@@ -29,6 +29,17 @@ public class DeclarationNode extends ASTNode
         //tac.addElement(this.getType().toString());    //Check on this, probably STOREI
         //tac.addElement(this.getType().toString());    //Check on this, probably STOREI
         tac.addElement(this.children.get(VAR_VALUE_INDEX).toString());  //temp to var
+        ASTNode intVAl = this.children.get(INT_VALUE_INDEX);
+        tac.addElement(intVAl.toString());  //value to temp register
+        if (intVAl instanceof IntLiteralNode) {
+            tac.addElement("STOREI");
+            tac.addElement("STOREI");
+        }
+        else {
+            tac.addElement("STOREF");
+            tac.addElement("STOREF");
+        }
+        tac.addElement(this.children.get(VAR_VALUE_INDEX).toString());  //temp to variable
         completeDelcTAC.add(tac);
         return completeDelcTAC;
     }
