@@ -8,6 +8,7 @@ package AbstractSyntaxTree;
 import AbstractSyntaxTree.Nodes.ASTNode;
 import java.util.List;
 import java.util.Stack;
+import symboltables.enums.ESymbolAttribute;
 
 /**
  *
@@ -36,9 +37,9 @@ public class AST
         this.currentAstBranch.push(newCurrentNode);
     }
     
-    public void pop()
+    public ASTNode pop()
     {
-        this.currentAstBranch.pop();
+        return this.currentAstBranch.pop();
     }
     
     public List<TACLine> generate3AC()

@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import littlecompiler.SymbolTableContainer;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -64,7 +65,9 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterProgram(LittleParser.ProgramContext ctx)
     {
-        this.symbolTables.push(new SymbolTable("GLOBAL"));
+        SymbolTable globalSymbolTable = new SymbolTable("GLOBAL");
+        this.symbolTables.push(globalSymbolTable);
+        SymbolTableContainer.getInstance().setGlobalTable(globalSymbolTable);
         this.ast = new AST(new ProgramNode());
     }
         
@@ -412,12 +415,28 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterFunc_declarations(LittleParser.Func_declarationsContext ctx)
     {
-        String functionName = ctx.children.get(0).getChild(2).getText();
-        String returnTypeString = ctx
-            .children
-            .get(0)
-            .getChild(1)
-            .getText();
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override public void exitFunc_declarations(LittleParser.Func_declarationsContext ctx)
+    {
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override public void enterFunc_decl(LittleParser.Func_declContext ctx)
+    {
+        String functionName = ctx.getChild(2).getText();
+        this.ast.push(new FunctionNode(functionName));
+        
+        String returnTypeString = ctx.getChild(1).getText();
         ESymbolAttribute returnType = ESymbolAttribute
             .valueOf(returnTypeString);
         
@@ -439,29 +458,11 @@ public class LittleBaseListener implements LittleListener
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitFunc_declarations(LittleParser.Func_declarationsContext ctx)
-    {
-        this.symbolTables.pop();
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void enterFunc_decl(LittleParser.Func_declContext ctx)
-    {
-        this.ast.push(new FunctionNode());
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
     @Override public void exitFunc_decl(LittleParser.Func_declContext ctx)
     {
         this.ast.pop();
+        
+        this.symbolTables.pop();
     }
     
     /**
@@ -628,7 +629,8 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterReturn_stmt(LittleParser.Return_stmtContext ctx)
     {
-        this.ast.push(new ReturnNode());
+        String containingMethodName = this.symbolTables.peek().getName();
+        this.ast.push(new ReturnNode(containingMethodName));
     }
 
     /**

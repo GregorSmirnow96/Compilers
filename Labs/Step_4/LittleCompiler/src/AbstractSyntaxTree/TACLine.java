@@ -36,7 +36,7 @@ public class TACLine
         
         for (String element : elements)
         {
-            lineText = lineText.concat(element);
+            lineText = lineText.concat(element.concat(" "));
         }
         
         return lineText;

@@ -5,7 +5,9 @@
  */
 package AbstractSyntaxTree.Nodes;
 
+import AbstractSyntaxTree.FunctionCodeContainer;
 import AbstractSyntaxTree.TACLine;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,13 +16,33 @@ import java.util.List;
  */
 public class FunctionNode extends ASTNode
 {
-    public FunctionNode()
+    private static final int INPUT_NODE_INDEX = 0;
+    private static final int STATEMENT_LIST_INDEX = 1;
+    
+    private final String functionName;
+    
+    public FunctionNode(String functionName)
     {
+        this.functionName = functionName;
     }
 
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        List<TACLine> methodLines = new ArrayList<>();
+        List<TACLine> parameterLoadingCode = this.children
+            .get(INPUT_NODE_INDEX)
+            .generate3AC();
+        
+        methodLines.addAll(parameterLoadingCode);
+        methodLines.addAll(
+            this.children.get(STATEMENT_LIST_INDEX).generate3AC());
+        
+        methodLines.forEach(line -> System.out.println(line.getLineText()));
+        
+        FunctionCodeContainer.getInstance().addFunctionCode(
+            functionName,
+            methodLines);
+        return methodLines;
     }
 }

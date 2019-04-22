@@ -5,7 +5,9 @@
  */
 package AbstractSyntaxTree.Nodes;
 
+import AbstractSyntaxTree.ParameterRegisterHandler;
 import AbstractSyntaxTree.TACLine;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +31,17 @@ public class InputParameterNode extends ASTNode
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        // Use singleton class to load in variables.
+        List<TACLine> variableLoadingCode = new ArrayList<>();
+        
+        TACLine newLine = new TACLine();
+        newLine.addElement("LOAD");
+        newLine.addElement(
+            ParameterRegisterHandler.getInstance().getNextRegister());
+        newLine.addElement(this.parameterName);
+        
+        variableLoadingCode.add(newLine);
+        
+        return variableLoadingCode;
     }
 }

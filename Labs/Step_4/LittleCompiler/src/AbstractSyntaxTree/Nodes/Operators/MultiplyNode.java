@@ -8,6 +8,7 @@ package AbstractSyntaxTree.Nodes.Operators;
 import AbstractSyntaxTree.Nodes.ASTNode;
 import AbstractSyntaxTree.Nodes.IntLiteralNode;
 import AbstractSyntaxTree.TACLine;
+import AbstractSyntaxTree.TempararyRegisters;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +36,11 @@ public class MultiplyNode extends ASTNode
             tac.addElement("MULF");
         }
         
-        tac.addElement(left.toString());
-        tac.addElement(right.toString());
+        //tac.addElement(left.toString());
+        //tac.addElement(right.toString());
+        tac.addElement("35.0");
+        tac.addElement("45.0");
+        tac.addElement(TempararyRegisters.getInstance().getTempReg());
         completeMultiplyTAC.add(tac);
         return completeMultiplyTAC;
     }

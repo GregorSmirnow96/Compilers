@@ -6,6 +6,7 @@
 package AbstractSyntaxTree.Nodes;
 
 import AbstractSyntaxTree.TACLine;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,10 +27,15 @@ public class FunctionCallNode extends ASTNode
         return this.functionName;
     }
     
-    // This shouldn't require code generation (I don't think).
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        List<TACLine> linesEndingWithFunctionResultStore = new ArrayList<>();
+        
+        this.children.forEach(child ->
+            linesEndingWithFunctionResultStore
+                .addAll(child.generate3AC()));
+        
+        return linesEndingWithFunctionResultStore;
     }
 }
