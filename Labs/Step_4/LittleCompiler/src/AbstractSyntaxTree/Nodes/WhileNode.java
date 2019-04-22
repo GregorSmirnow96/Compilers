@@ -20,7 +20,7 @@ public class WhileNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeWhileTAC = new ArrayList<>();
-        var tac = new TACLine();
+        TACLine tac = new TACLine();
 
         return completeWhileTAC;
     }

@@ -23,7 +23,7 @@ public class AssignNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeAssignTAC = new ArrayList<>();
-        var tac = new TACLine();
+        TACLine tac = new TACLine();
         //tac.addElement(this.getType().toString());  //Check on this
         tac.addElement(this.children.get(VARIABLE_INDEX).toString());
         tac.addElement(this.children.get(EXPRESSION_INDEX).toString());

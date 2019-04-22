@@ -25,9 +25,9 @@ public class DivideNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeDivideTAC = new ArrayList<>();
-        var tac =  new TACLine();
-        var left = this.children.get(LEFT_OPERATOR_INDEX);
-        var right = this.children.get(RIGHT_OPERATOR_INDEX);
+        TACLine tac =  new TACLine();
+        ASTNode left = this.children.get(LEFT_OPERATOR_INDEX);
+        ASTNode right = this.children.get(RIGHT_OPERATOR_INDEX);
         if (left instanceof IntLiteralNode || right instanceof IntLiteralNode) {
             tac.addElement("DIVI");
         }

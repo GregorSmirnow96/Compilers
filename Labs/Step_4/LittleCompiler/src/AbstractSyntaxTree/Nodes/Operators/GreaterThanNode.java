@@ -24,7 +24,7 @@ public class GreaterThanNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeGreaterTAC = new ArrayList<>();
-        var tac = new TACLine();
+        TACLine tac = new TACLine();
         //tac.addElement(this.getType().toString());  //Check on this
         tac.addElement(this.children.get(LEFT_OPERATOR_INDEX).toString());
         tac.addElement(this.children.get(RIGHT_OPERATOR_INDEX).toString());

@@ -20,7 +20,7 @@ public class WriteNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeWriteTAC = new ArrayList<>();
-        var tac = new TACLine();
+        TACLine tac = new TACLine();
         //tac.addElement(this.getType().toString());  //check on this
         tac.addElement(this.children.get(0).toString());
         completeWriteTAC.add(tac);

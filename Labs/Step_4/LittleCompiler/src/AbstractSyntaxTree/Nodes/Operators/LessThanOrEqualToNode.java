@@ -24,7 +24,7 @@ public class LessThanOrEqualToNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeLessOrEqTAC = new ArrayList<>();
-        var tac = new TACLine();
+        TACLine tac = new TACLine();
 
         return completeLessOrEqTAC;
     }

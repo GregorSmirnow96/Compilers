@@ -24,7 +24,7 @@ public class DeclarationNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeDelcTAC = new ArrayList<>();
-        var tac = new TACLine();
+        TACLine tac = new TACLine();
         tac.addElement(this.children.get(INT_VALUE_INDEX).toString());  //val to temp
         //tac.addElement(this.getType().toString());    //Check on this, probably STOREI
         //tac.addElement(this.getType().toString());    //Check on this, probably STOREI
