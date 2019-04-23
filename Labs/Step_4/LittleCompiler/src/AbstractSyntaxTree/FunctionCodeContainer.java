@@ -26,6 +26,7 @@ public class FunctionCodeContainer
     
     private FunctionCodeContainer()
     {
+        this.functionCodes = new HashMap<>();
     }
     
     public void addFunctionCode(

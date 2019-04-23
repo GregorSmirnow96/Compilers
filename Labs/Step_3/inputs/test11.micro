@@ -3,19 +3,21 @@ PROGRAM test BEGIN
 	FLOAT x,y,z;
 	INT h,j,k;
 	
-	FUNCTION INT function1()
+	FUNCTION INT function1(INT a, INT b, FLOAT c)
 	BEGIN
-	RETURN 35*45;
+        RETURN 35*45;
 	END
+    
 	FUNCTION INT function2()
 	BEGIN
 		RETURN function2();
 	END
+    
 	FUNCTION INT main()
 	BEGIN
 	WRITE (a);
 	READ (b);
-	a := function1();
+	a := function1(1, 2, 3.0);
 	c := function2();
 	c:=a+b;
 	END

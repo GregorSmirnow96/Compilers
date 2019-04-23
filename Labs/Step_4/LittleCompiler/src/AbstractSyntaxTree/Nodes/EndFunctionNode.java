@@ -13,18 +13,17 @@ import java.util.List;
  *
  * @author im5no
  */
-public class ProgramNode extends ASTNode
+public class EndFunctionNode extends ASTNode
 {
     @Override
     public List<TACLine> generate3AC()
     {
-        List<TACLine> programCode = new ArrayList<>();
+        List<TACLine> code = new ArrayList<>();
         
-        for (ASTNode child : children)
-        {
-            programCode.addAll(child.generate3AC());
-        }
+        TACLine linkLine = new TACLine();
+        linkLine.addElement("RET");
+        code.add(linkLine);
         
-        return programCode;
+        return code;
     }
 }

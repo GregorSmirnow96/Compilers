@@ -22,10 +22,7 @@ public class StatementListNode extends ASTNode
         
         children.forEach(child ->
         {
-            if (child instanceof ReturnNode)
-            {
-                statements.addAll(child.generate3AC());
-            }
+            statements.addAll(child.generate3AC());
         });
         
         return statements;

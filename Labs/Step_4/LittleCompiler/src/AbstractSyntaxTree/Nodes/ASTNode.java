@@ -38,10 +38,10 @@ public abstract class ASTNode
     
     protected ESymbolAttribute getChildResultType(List<TACLine> childCode)
     {
-        String storeStatement = childCode
+        String finalStatement = childCode
             .get(childCode.size() - 1).getElements().get(0);
         
-        return storeStatement.equals("STOREI")
+        return finalStatement.charAt(finalStatement.length() - 1) == 'I'
             ? ESymbolAttribute.INT
             : ESymbolAttribute.FLOAT;
     }

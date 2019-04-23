@@ -4,9 +4,11 @@ package littlecompiler.GeneratedGrammarFiles;
 
 import AbstractSyntaxTree.AST;
 import AbstractSyntaxTree.Nodes.AssignNode;
+import AbstractSyntaxTree.Nodes.BeginFunctionNode;
 import AbstractSyntaxTree.Nodes.ConditionNode;
 import AbstractSyntaxTree.Nodes.DeclarationNode;
 import AbstractSyntaxTree.Nodes.ElseNode;
+import AbstractSyntaxTree.Nodes.EndFunctionNode;
 import AbstractSyntaxTree.Nodes.FloatLiteralNode;
 import AbstractSyntaxTree.Nodes.FunctionCallNode;
 import AbstractSyntaxTree.Nodes.Operators.DivideNode;
@@ -472,6 +474,8 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterFunc_body(LittleParser.Func_bodyContext ctx)
     {
+        this.ast.push(new BeginFunctionNode());
+        this.ast.pop();
     }
     
     /**
@@ -481,6 +485,8 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitFunc_body(LittleParser.Func_bodyContext ctx)
     {
+        this.ast.push(new EndFunctionNode());
+        this.ast.pop();
     }
 
     /**
@@ -570,6 +576,8 @@ public class LittleBaseListener implements LittleListener
     @Override public void enterAssign_expr(LittleParser.Assign_exprContext ctx)
     {
         this.ast.push(new AssignNode());
+        this.ast.push(new VariableNode(ctx.getChild(0).getText()));
+        this.ast.pop();
     }
 
     /**

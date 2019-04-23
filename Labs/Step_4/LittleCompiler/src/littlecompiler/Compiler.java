@@ -58,8 +58,6 @@ public class Compiler
             walker.walk(
                 listener,
                 parseTree);
-            
-            printSymbolTable();
         }
         catch (Exception e)
         {

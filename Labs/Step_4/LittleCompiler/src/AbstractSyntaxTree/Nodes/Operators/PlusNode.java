@@ -6,11 +6,11 @@
 package AbstractSyntaxTree.Nodes.Operators;
 
 import AbstractSyntaxTree.Nodes.ASTNode;
+import AbstractSyntaxTree.Nodes.FloatLiteralNode;
 import AbstractSyntaxTree.Nodes.IntLiteralNode;
 import AbstractSyntaxTree.TACLine;
-import org.antlr.v4.tool.LeftRecursionCyclesMessage;
+import AbstractSyntaxTree.TempararyRegisters;
 
-import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,8 +37,48 @@ public class PlusNode extends ASTNode
             tac.addElement("ADDF");
         }
 
-        tac.addElement(left.toString());
-        tac.addElement(right.toString());
+        String leftValue = null;
+        
+        if (left instanceof IntLiteralNode)
+        {
+            leftValue = String.valueOf(
+                ((IntLiteralNode) left).getLiteralValue());
+        }
+        else if (left instanceof FloatLiteralNode)
+        {
+            leftValue = String.valueOf(
+                ((FloatLiteralNode) left).getLiteralValue());
+        }
+        else
+        {
+            List<TACLine> leftExpressionCode = left.generate3AC();
+            leftValue = this.getChildResultRegister(leftExpressionCode);
+            completeAddTAC.addAll(leftExpressionCode);
+        }
+
+        String rightValue = null;
+        
+        if (right instanceof IntLiteralNode)
+        {
+            rightValue = String.valueOf(
+                ((IntLiteralNode) right).getLiteralValue());
+        }
+        else if (right instanceof FloatLiteralNode)
+        {
+            rightValue = String.valueOf(
+                ((FloatLiteralNode) right).getLiteralValue());
+        }
+        else
+        {
+            List<TACLine> rightExpressionCode = right.generate3AC();
+            rightValue = this.getChildResultRegister(rightExpressionCode);
+            completeAddTAC.addAll(rightExpressionCode);
+        }
+        
+        tac.addElement(leftValue);
+        tac.addElement(rightValue);
+        tac.addElement(TempararyRegisters.getInstance().getTempReg());
+        
         completeAddTAC.add(tac);
         return completeAddTAC;
     }

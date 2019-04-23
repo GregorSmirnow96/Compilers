@@ -6,9 +6,11 @@
 package AbstractSyntaxTree.Nodes;
 
 import AbstractSyntaxTree.TACLine;
+import AbstractSyntaxTree.TempararyRegisters;
 
 import java.util.ArrayList;
 import java.util.List;
+import symboltables.enums.ESymbolAttribute;
 
 /**
  *
@@ -23,12 +25,62 @@ public class AssignNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeAssignTAC = new ArrayList<>();
-        TACLine tac = new TACLine();
+        TACLine tac1 = new TACLine();
+        TACLine tac2 = new TACLine();
         //tac.addElement(this.getType().toString());  //Check on this
-        tac.addElement(this.children.get(VARIABLE_INDEX).toString());
+        //tac.addElement(this.children.get(VARIABLE_INDEX).toString());
         //probably need to send the expression index value to and expressionNode
-        tac.addElement(this.children.get(EXPRESSION_INDEX).toString());
-        completeAssignTAC.add(tac);
+        
+        ASTNode rhs = this.children.get(EXPRESSION_INDEX);
+        String variableName = ((VariableNode)this.children.get(VARIABLE_INDEX))
+            .getVariableName();
+        String tempRegister = TempararyRegisters
+            .getInstance()
+            .checkTempReg(variableName);
+        
+        if (rhs instanceof IntLiteralNode)
+        {
+            Integer value = ((IntLiteralNode) rhs).getLiteralValue();
+            tac1.addElement("STOREI");
+            tac1.addElement(value.toString());
+            tac1.addElement(tempRegister);
+            tac2.addElement("STOREI");
+            tac2.addElement(tempRegister);
+            tac2.addElement(variableName);
+            completeAssignTAC.add(tac1);
+        }
+        else if (rhs instanceof FloatLiteralNode)
+        {
+            Integer value = ((IntLiteralNode) rhs).getLiteralValue();
+            tac1.addElement("STOREF");
+            tac1.addElement(value.toString());
+            tac1.addElement(tempRegister);
+            tac2.addElement("STOREF");
+            tac2.addElement(tempRegister);
+            tac2.addElement(variableName);
+            completeAssignTAC.add(tac1);
+        }
+        else
+        {
+            List<TACLine> expressionCode = rhs.generate3AC();
+            ESymbolAttribute expressionType = this.getChildResultType(
+                expressionCode);
+            String expressionResultRegister = this.getChildResultRegister(
+                expressionCode);
+            
+            String storeType = expressionType == ESymbolAttribute.INT
+                ? "STOREI"
+                : "STOREF";
+            
+            tac2.addElement(storeType);
+            tac2.addElement(expressionResultRegister);
+            tac2.addElement(variableName);
+            
+            completeAssignTAC.addAll(expressionCode);
+        }
+        
+        completeAssignTAC.add(tac2);
+        
         return completeAssignTAC;
     }
 }

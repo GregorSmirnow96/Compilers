@@ -17,7 +17,7 @@ import java.util.List;
 public class FunctionNode extends ASTNode
 {
     private static final int INPUT_NODE_INDEX = 0;
-    private static final int STATEMENT_LIST_INDEX = 1;
+    private static final int STATEMENT_LIST_INDEX = 2;
     
     private final String functionName;
     
@@ -30,19 +30,13 @@ public class FunctionNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> methodLines = new ArrayList<>();
-        List<TACLine> parameterLoadingCode = this.children
-            .get(INPUT_NODE_INDEX)
-            .generate3AC();
+        TACLine methodLabel = new TACLine();
+        methodLabel.addElement("LABEL");
+        methodLabel.addElement(this.functionName);
+        methodLines.add(methodLabel);
         
-        methodLines.addAll(parameterLoadingCode);
-        methodLines.addAll(
-            this.children.get(STATEMENT_LIST_INDEX).generate3AC());
+        this.children.forEach(child -> methodLines.addAll(child.generate3AC()));
         
-        methodLines.forEach(line -> System.out.println(line.getLineText()));
-        
-        FunctionCodeContainer.getInstance().addFunctionCode(
-            functionName,
-            methodLines);
         return methodLines;
     }
 }
