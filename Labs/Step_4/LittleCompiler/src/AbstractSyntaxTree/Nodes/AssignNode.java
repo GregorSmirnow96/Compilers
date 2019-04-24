@@ -10,6 +10,7 @@ import AbstractSyntaxTree.TempararyRegisters;
 
 import java.util.ArrayList;
 import java.util.List;
+import symboltables.SymbolTable;
 import symboltables.enums.ESymbolAttribute;
 
 /**
@@ -21,6 +22,13 @@ public class AssignNode extends ASTNode
     protected final static int VARIABLE_INDEX = 0;
     protected final static int EXPRESSION_INDEX = 1;
 
+    private final SymbolTable scopeTable;
+    
+    public AssignNode(SymbolTable table)
+    {
+        this.scopeTable = table;
+    }
+    
     @Override
     public List<TACLine> generate3AC()
     {
@@ -31,12 +39,12 @@ public class AssignNode extends ASTNode
         ASTNode rhs = this.children.get(EXPRESSION_INDEX);
         String variableName = ((VariableNode)this.children.get(VARIABLE_INDEX))
             .getVariableName();
-        String tempRegister = TempararyRegisters
-            .getInstance()
-            .checkTempReg(variableName);
         
         if (rhs instanceof IntLiteralNode)
         {
+            String tempRegister = TempararyRegisters
+                .getInstance()
+                .checkTempReg(variableName);
             Integer value = ((IntLiteralNode) rhs).getLiteralValue();
             tac1.addElement("STOREI");
             tac1.addElement(value.toString());
@@ -45,10 +53,14 @@ public class AssignNode extends ASTNode
             tac2.addElement(tempRegister);
             tac2.addElement(variableName);
             completeAssignTAC.add(tac1);
+            completeAssignTAC.add(tac2);
         }
         else if (rhs instanceof FloatLiteralNode)
         {
-            Integer value = ((IntLiteralNode) rhs).getLiteralValue();
+            String tempRegister = TempararyRegisters
+                .getInstance()
+                .checkTempReg(variableName);
+            Float value = ((FloatLiteralNode) rhs).getLiteralValue();
             tac1.addElement("STOREF");
             tac1.addElement(value.toString());
             tac1.addElement(tempRegister);
@@ -56,11 +68,23 @@ public class AssignNode extends ASTNode
             tac2.addElement(tempRegister);
             tac2.addElement(variableName);
             completeAssignTAC.add(tac1);
+            completeAssignTAC.add(tac2);
         }
         else if (rhs instanceof VariableNode)
         {
-            String rhsVariableName = ((VariableNode) rhs).getVariableName();
-            int i = 0;
+            VariableNode node = (VariableNode) rhs;
+            String variable = node.getVariableName();
+            ESymbolAttribute type = this.scopeTable
+                .getSymbolByName(variable)
+                .getAttribute();
+            String variableType = type == ESymbolAttribute.INT
+                ? "I"
+                : "F";
+            TACLine tac = new TACLine();
+            tac.addElement("STORE".concat(variableType));
+            tac.addElement(variable);
+            tac.addElement(variableName);
+            completeAssignTAC.add(tac);
         }
         else
         {
@@ -79,9 +103,9 @@ public class AssignNode extends ASTNode
             tac2.addElement(variableName);
             
             completeAssignTAC.addAll(expressionCode);
+            completeAssignTAC.add(tac2);
         }
         
-        completeAssignTAC.add(tac2);
         
         return completeAssignTAC;
     }

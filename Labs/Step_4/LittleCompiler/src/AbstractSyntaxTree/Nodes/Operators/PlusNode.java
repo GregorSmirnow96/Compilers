@@ -43,12 +43,24 @@ public class PlusNode extends ASTNode
         if (left instanceof IntLiteralNode)
         {
             leftValue = String.valueOf(
-                ((IntLiteralNode) left).getLiteralValue());
+                ((FloatLiteralNode) left).getLiteralValue());
+            TACLine storeRightValue = new TACLine();
+            storeRightValue.addElement("STOREI");
+            storeRightValue.addElement(leftValue);
+            leftValue = TempararyRegisters.getInstance().getTempReg();
+            storeRightValue.addElement(leftValue);
+            completeAddTAC.add(storeRightValue);
         }
         else if (left instanceof FloatLiteralNode)
         {
             leftValue = String.valueOf(
                 ((FloatLiteralNode) left).getLiteralValue());
+            TACLine storeRightValue = new TACLine();
+            storeRightValue.addElement("STOREF");
+            storeRightValue.addElement(leftValue);
+            leftValue = TempararyRegisters.getInstance().getTempReg();
+            storeRightValue.addElement(leftValue);
+            completeAddTAC.add(storeRightValue);
         }
         else if (left instanceof VariableNode)
         {
@@ -67,11 +79,23 @@ public class PlusNode extends ASTNode
         {
             rightValue = String.valueOf(
                 ((IntLiteralNode) right).getLiteralValue());
+            TACLine storeRightValue = new TACLine();
+            storeRightValue.addElement("STOREI");
+            storeRightValue.addElement(rightValue);
+            rightValue = TempararyRegisters.getInstance().getTempReg();
+            storeRightValue.addElement(rightValue);
+            completeAddTAC.add(storeRightValue);
         }
         else if (right instanceof FloatLiteralNode)
         {
             rightValue = String.valueOf(
                 ((FloatLiteralNode) right).getLiteralValue());
+            TACLine storeRightValue = new TACLine();
+            storeRightValue.addElement("STOREF");
+            storeRightValue.addElement(rightValue);
+            rightValue = TempararyRegisters.getInstance().getTempReg();
+            storeRightValue.addElement(rightValue);
+            completeAddTAC.add(storeRightValue);
         }
         else if (right instanceof VariableNode)
         {

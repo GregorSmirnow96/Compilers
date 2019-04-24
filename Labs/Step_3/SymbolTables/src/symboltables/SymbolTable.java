@@ -21,6 +21,7 @@ public class SymbolTable
     private final String name;
     private final List<Symbol> symbols;
     private final List<SymbolTable> childTables;
+    private SymbolTable parent;
     
     public SymbolTable(String name)
     {
@@ -48,6 +49,9 @@ public class SymbolTable
             if (symbol.getName().equals(symbolName))
                 return symbol;
         
+        if (this.parent != null)
+            return this.parent.getSymbolByName(symbolName);
+        
         return null;
     }
     
@@ -68,6 +72,11 @@ public class SymbolTable
     
     /* Mutators */
     
+    public void setParent(SymbolTable parent)
+    {
+        this.parent = parent;
+    }
+    
     public void addSymbol(Symbol newSymbol)
     {
         ESymbolType symbolType = newSymbol.getType();
@@ -81,10 +90,12 @@ public class SymbolTable
     {
         SymbolTable procedureTable = new SymbolTable(procedureSymbol.getName());
         childTables.add(procedureTable);
+        procedureTable.setParent(this);
     }
     
     public void addChildTable(SymbolTable newTable)
     {
         childTables.add(newTable);
+        newTable.setParent(this);
     }
 }

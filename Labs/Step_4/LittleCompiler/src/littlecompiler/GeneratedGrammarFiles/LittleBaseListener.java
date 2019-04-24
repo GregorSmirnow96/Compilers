@@ -35,6 +35,8 @@ import AbstractSyntaxTree.Nodes.VariableNode;
 import AbstractSyntaxTree.Nodes.WhileNode;
 import AbstractSyntaxTree.Nodes.WriteNode;
 import AbstractSyntaxTree.TACLine;
+import AbstractSyntaxTree.TinyAssemblyGenerator;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import java.util.regex.Matcher;
@@ -83,6 +85,8 @@ public class LittleBaseListener implements LittleListener
         this.ast.pop();
         List<TACLine> linesOfCode = this.ast.generate3AC();
         linesOfCode.forEach(line -> System.out.println(line.getLineText()));
+        TinyAssemblyGenerator generator = new TinyAssemblyGenerator();
+        generator.assemble((ArrayList<TACLine>)linesOfCode);
     }
         
     /**
@@ -575,7 +579,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterAssign_expr(LittleParser.Assign_exprContext ctx)
     {
-        this.ast.push(new AssignNode());
+        this.ast.push(new AssignNode(this.symbolTables.peek()));
         this.ast.push(new VariableNode(ctx.getChild(0).getText()));
         this.ast.pop();
     }
@@ -597,7 +601,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterRead_stmt(LittleParser.Read_stmtContext ctx)
     {
-        this.ast.push(new ReadNode());
+        this.ast.push(new ReadNode(this.symbolTables.peek()));
     }
 
     /**
@@ -617,7 +621,7 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterWrite_stmt(LittleParser.Write_stmtContext ctx)
     {
-        this.ast.push(new WriteNode());
+        this.ast.push(new WriteNode(this.symbolTables.peek()));
     }
 
     /**
@@ -770,6 +774,13 @@ public class LittleBaseListener implements LittleListener
             return;
         }
         
+        pattern = Pattern.compile("[(].*[)]");
+        matcher = pattern.matcher(primaryText);
+        if (matcher.matches())
+        {
+            return;
+        }
+        
         pattern = Pattern.compile("[0-9]+[.][0-9]+");
         matcher = pattern.matcher(ctx.getText());
         if (matcher.matches())
@@ -787,6 +798,14 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void exitPrimary(LittleParser.PrimaryContext ctx)
     {
+        String primaryText = ctx.getText();
+        Pattern pattern = Pattern.compile("[(].*[)]");
+        Matcher matcher = pattern.matcher(primaryText);
+        if (matcher.matches())
+        {
+            return;
+        }
+        
         this.ast.pop();
     }
 
@@ -897,22 +916,24 @@ public class LittleBaseListener implements LittleListener
         switch (operator)
         {
             case ">":
-                this.ast.push(new GreaterThanNode());
+                this.ast.push(new GreaterThanNode(this.symbolTables.peek()));
                 break;
             case ">=":
-                this.ast.push(new GreaterThanOrEqualToNode());
+                this.ast.push(
+                    new GreaterThanOrEqualToNode(this.symbolTables.peek()));
                 break;
             case "<":
-                this.ast.push(new LessThanNode());
+                this.ast.push(new LessThanNode(this.symbolTables.peek()));
                 break;
             case "<=":
-                this.ast.push(new LessThanOrEqualToNode());
+                this.ast.push(
+                    new LessThanOrEqualToNode(this.symbolTables.peek()));
                 break;
             case "=":
-                this.ast.push(new EqualNode());
+                this.ast.push(new EqualNode(this.symbolTables.peek()));
                 break;
             case "!=":
-                this.ast.push(new NotEqualNode());
+                this.ast.push(new NotEqualNode(this.symbolTables.peek()));
                 break;
             default:
                 break;

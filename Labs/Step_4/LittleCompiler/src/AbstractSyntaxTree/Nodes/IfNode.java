@@ -64,9 +64,6 @@ public class IfNode extends ASTNode
         jumpOutLabel.addElement(outLabel);
         completeIfTAC.add(jumpOutLabel);
         
-        
-        System.out.println("----------------------");
-        completeIfTAC.forEach(line -> System.out.println(line.getLineText()));
         return completeIfTAC;
     }
 }

@@ -8,13 +8,14 @@ package AbstractSyntaxTree.Nodes.Operators;
 import AbstractSyntaxTree.Nodes.ASTNode;
 import AbstractSyntaxTree.Nodes.FloatLiteralNode;
 import AbstractSyntaxTree.Nodes.IntLiteralNode;
-import static AbstractSyntaxTree.Nodes.Operators.PlusNode.LEFT_OPERAND_INDEX;
 import AbstractSyntaxTree.Nodes.VariableNode;
-import AbstractSyntaxTree.ParameterRegisterHandler;
 import AbstractSyntaxTree.TACLine;
+import AbstractSyntaxTree.TempararyRegisters;
 
 import java.util.ArrayList;
 import java.util.List;
+import symboltables.SymbolTable;
+import symboltables.enums.ESymbolAttribute;
 
 /**
  *
@@ -24,6 +25,13 @@ public class EqualNode extends ASTNode
 {
     protected final static int LEFT_OPERAND_INDEX = 0;
     protected final static int RIGHT_OPERAND_INDEX = 1;
+    
+    private final SymbolTable scopeTable;
+    
+    public EqualNode(SymbolTable table)
+    {
+        this.scopeTable = table;
+    }
 
     @Override
     public List<TACLine> generate3AC()
@@ -32,6 +40,7 @@ public class EqualNode extends ASTNode
         ASTNode left = this.children.get(LEFT_OPERAND_INDEX);
         ASTNode right = this.children.get(RIGHT_OPERAND_INDEX);
 
+        String variableType = "F";
         String leftValue = null;
         
         if (left instanceof IntLiteralNode)
@@ -41,10 +50,11 @@ public class EqualNode extends ASTNode
             TACLine storeLiteralLine = new TACLine();
             storeLiteralLine.addElement("STOREI");
             storeLiteralLine.addElement(literal);
-            leftValue = ParameterRegisterHandler
+            leftValue = TempararyRegisters
                 .getInstance()
-                .getNextRegister();
+                .getTempReg();
             storeLiteralLine.addElement(leftValue);
+            completeAddTAC.add(storeLiteralLine);
         }
         else if (left instanceof FloatLiteralNode)
         {
@@ -53,10 +63,11 @@ public class EqualNode extends ASTNode
             TACLine storeLiteralLine = new TACLine();
             storeLiteralLine.addElement("STOREF");
             storeLiteralLine.addElement(literal);
-            leftValue = ParameterRegisterHandler
+            leftValue = TempararyRegisters
                 .getInstance()
-                .getNextRegister();
+                .getTempReg();
             storeLiteralLine.addElement(leftValue);
+            completeAddTAC.add(storeLiteralLine);
         }
         else if (left instanceof VariableNode)
         {
@@ -78,10 +89,12 @@ public class EqualNode extends ASTNode
             TACLine storeLiteralLine = new TACLine();
             storeLiteralLine.addElement("STOREI");
             storeLiteralLine.addElement(literal);
-            rightValue = ParameterRegisterHandler
+            rightValue = TempararyRegisters
                 .getInstance()
-                .getNextRegister();
+                .getTempReg();
             storeLiteralLine.addElement(rightValue);
+            completeAddTAC.add(storeLiteralLine);
+            variableType = "I";
         }
         else if (right instanceof FloatLiteralNode)
         {
@@ -90,25 +103,39 @@ public class EqualNode extends ASTNode
             TACLine storeLiteralLine = new TACLine();
             storeLiteralLine.addElement("STOREF");
             storeLiteralLine.addElement(rightLiteral);
-            rightValue = ParameterRegisterHandler
+            rightValue = TempararyRegisters
                 .getInstance()
-                .getNextRegister();
+                .getTempReg();
             storeLiteralLine.addElement(rightValue);
+            completeAddTAC.add(storeLiteralLine);
         }
         else if (right instanceof VariableNode)
         {
             rightValue = ((VariableNode) right).getVariableName();
+            ESymbolAttribute type = this.scopeTable
+                .getSymbolByName(rightValue)
+                .getAttribute();
+            variableType = type == ESymbolAttribute.INT
+                ? "I"
+                : "F";
         }
         else
         {
             List<TACLine> rightExpressionCode = right.generate3AC();
             rightValue = this.getChildResultRegister(rightExpressionCode);
             completeAddTAC.addAll(rightExpressionCode);
+            ESymbolAttribute expressionType = this.getChildResultType(
+                rightExpressionCode);
+            variableType = expressionType == ESymbolAttribute.INT
+                ? "I"
+                : "F";
         }
         
         TACLine jumpLine = new TACLine();
+        jumpLine.addElement("NE".concat(variableType));
         jumpLine.addElement(leftValue);
         jumpLine.addElement(rightValue);
+        completeAddTAC.add(jumpLine);
         /* Add label in caller */
         
         return completeAddTAC;
