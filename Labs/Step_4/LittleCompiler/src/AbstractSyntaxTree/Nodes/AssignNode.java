@@ -27,9 +27,6 @@ public class AssignNode extends ASTNode
         List<TACLine> completeAssignTAC = new ArrayList<>();
         TACLine tac1 = new TACLine();
         TACLine tac2 = new TACLine();
-        //tac.addElement(this.getType().toString());  //Check on this
-        //tac.addElement(this.children.get(VARIABLE_INDEX).toString());
-        //probably need to send the expression index value to and expressionNode
         
         ASTNode rhs = this.children.get(EXPRESSION_INDEX);
         String variableName = ((VariableNode)this.children.get(VARIABLE_INDEX))
@@ -59,6 +56,11 @@ public class AssignNode extends ASTNode
             tac2.addElement(tempRegister);
             tac2.addElement(variableName);
             completeAssignTAC.add(tac1);
+        }
+        else if (rhs instanceof VariableNode)
+        {
+            String rhsVariableName = ((VariableNode) rhs).getVariableName();
+            int i = 0;
         }
         else
         {

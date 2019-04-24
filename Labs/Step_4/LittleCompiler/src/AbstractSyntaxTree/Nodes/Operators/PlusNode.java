@@ -8,6 +8,7 @@ package AbstractSyntaxTree.Nodes.Operators;
 import AbstractSyntaxTree.Nodes.ASTNode;
 import AbstractSyntaxTree.Nodes.FloatLiteralNode;
 import AbstractSyntaxTree.Nodes.IntLiteralNode;
+import AbstractSyntaxTree.Nodes.VariableNode;
 import AbstractSyntaxTree.TACLine;
 import AbstractSyntaxTree.TempararyRegisters;
 
@@ -49,6 +50,10 @@ public class PlusNode extends ASTNode
             leftValue = String.valueOf(
                 ((FloatLiteralNode) left).getLiteralValue());
         }
+        else if (left instanceof VariableNode)
+        {
+            leftValue = ((VariableNode) left).getVariableName();
+        }
         else
         {
             List<TACLine> leftExpressionCode = left.generate3AC();
@@ -67,6 +72,10 @@ public class PlusNode extends ASTNode
         {
             rightValue = String.valueOf(
                 ((FloatLiteralNode) right).getLiteralValue());
+        }
+        else if (right instanceof VariableNode)
+        {
+            rightValue = ((VariableNode) right).getVariableName();
         }
         else
         {
