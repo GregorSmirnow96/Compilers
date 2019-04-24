@@ -14,9 +14,11 @@ import java.util.List;
  */
 public class ConditionNode extends ASTNode
 {
+    private static final int BOOLEAN_OPERATOR_INDEX = 0;
+    
     @Override
     public List<TACLine> generate3AC()
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.children.get(BOOLEAN_OPERATOR_INDEX).generate3AC();
     }
 }

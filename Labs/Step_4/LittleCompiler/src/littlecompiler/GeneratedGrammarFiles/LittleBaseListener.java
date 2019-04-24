@@ -761,16 +761,16 @@ public class LittleBaseListener implements LittleListener
      */
     @Override public void enterPrimary(LittleParser.PrimaryContext ctx)
     {
-        Pattern pattern = Pattern.compile("[0-9]");
+        Pattern pattern = Pattern.compile("[0-9]+");
         String primaryText = ctx.getText();
-        Matcher matcher = pattern.matcher(ctx.getText());
+        Matcher matcher = pattern.matcher(primaryText);
         if (matcher.matches())
         {
             this.ast.push(new IntLiteralNode(Integer.parseInt(ctx.getText())));
             return;
         }
         
-        pattern = Pattern.compile("[0-9][.][0-9]");
+        pattern = Pattern.compile("[0-9]+[.][0-9]+");
         matcher = pattern.matcher(ctx.getText());
         if (matcher.matches())
             this.ast.push(

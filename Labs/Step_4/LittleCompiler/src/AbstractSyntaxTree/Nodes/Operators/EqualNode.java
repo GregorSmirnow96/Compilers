@@ -10,6 +10,7 @@ import AbstractSyntaxTree.Nodes.FloatLiteralNode;
 import AbstractSyntaxTree.Nodes.IntLiteralNode;
 import static AbstractSyntaxTree.Nodes.Operators.PlusNode.LEFT_OPERAND_INDEX;
 import AbstractSyntaxTree.Nodes.VariableNode;
+import AbstractSyntaxTree.ParameterRegisterHandler;
 import AbstractSyntaxTree.TACLine;
 
 import java.util.ArrayList;
@@ -28,7 +29,6 @@ public class EqualNode extends ASTNode
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeAddTAC = new ArrayList<>();
-        TACLine tac = new TACLine();
         ASTNode left = this.children.get(LEFT_OPERAND_INDEX);
         ASTNode right = this.children.get(RIGHT_OPERAND_INDEX);
 
@@ -36,13 +36,27 @@ public class EqualNode extends ASTNode
         
         if (left instanceof IntLiteralNode)
         {
-            leftValue = String.valueOf(
-                ((IntLiteralNode) left).getLiteralValue());
+            String literal = String.valueOf(
+                ((IntLiteralNode) right).getLiteralValue());
+            TACLine storeLiteralLine = new TACLine();
+            storeLiteralLine.addElement("STOREI");
+            storeLiteralLine.addElement(literal);
+            leftValue = ParameterRegisterHandler
+                .getInstance()
+                .getNextRegister();
+            storeLiteralLine.addElement(leftValue);
         }
         else if (left instanceof FloatLiteralNode)
         {
-            leftValue = String.valueOf(
-                ((FloatLiteralNode) left).getLiteralValue());
+            String literal = String.valueOf(
+                ((IntLiteralNode) right).getLiteralValue());
+            TACLine storeLiteralLine = new TACLine();
+            storeLiteralLine.addElement("STOREF");
+            storeLiteralLine.addElement(literal);
+            leftValue = ParameterRegisterHandler
+                .getInstance()
+                .getNextRegister();
+            storeLiteralLine.addElement(leftValue);
         }
         else if (left instanceof VariableNode)
         {
@@ -59,13 +73,27 @@ public class EqualNode extends ASTNode
         
         if (right instanceof IntLiteralNode)
         {
-            rightValue = String.valueOf(
+            String literal = String.valueOf(
                 ((IntLiteralNode) right).getLiteralValue());
+            TACLine storeLiteralLine = new TACLine();
+            storeLiteralLine.addElement("STOREI");
+            storeLiteralLine.addElement(literal);
+            rightValue = ParameterRegisterHandler
+                .getInstance()
+                .getNextRegister();
+            storeLiteralLine.addElement(rightValue);
         }
         else if (right instanceof FloatLiteralNode)
         {
-            rightValue = String.valueOf(
-                ((FloatLiteralNode) right).getLiteralValue());
+            String rightLiteral = String.valueOf(
+                ((IntLiteralNode) right).getLiteralValue());
+            TACLine storeLiteralLine = new TACLine();
+            storeLiteralLine.addElement("STOREF");
+            storeLiteralLine.addElement(rightLiteral);
+            rightValue = ParameterRegisterHandler
+                .getInstance()
+                .getNextRegister();
+            storeLiteralLine.addElement(rightValue);
         }
         else if (right instanceof VariableNode)
         {

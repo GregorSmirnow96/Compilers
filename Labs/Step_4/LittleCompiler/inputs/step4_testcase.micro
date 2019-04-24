@@ -12,7 +12,7 @@ BEGIN
 		b := 0;
 
         READ (p);
-        IF (p > 10) 
+        IF (p = 10) 
         	a := a + 1;
         ELSE
             IF (i = 0)
