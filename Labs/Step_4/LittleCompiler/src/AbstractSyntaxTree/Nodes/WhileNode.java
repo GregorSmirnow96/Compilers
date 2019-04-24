@@ -17,18 +17,26 @@ import java.util.List;
  */
 public class WhileNode extends ASTNode
 {
+    protected final static int WHILE_CONDITION_INDEX = 2;
+    protected final static int WHILE_DECL_INDEX = 4;
+    protected final static int WHILE_STMTLIST_INDEX = 5;
+
     @Override
     public List<TACLine> generate3AC()
     {
         Labels label = Labels.getInstance();
         String whileLabel = label.getLabel();
+        String endWhileLabel = label.getLabel();
         List<TACLine> completeWhileTAC = new ArrayList<>();
         
         TACLine tac = new TACLine();
 
         tac.addElement(whileLabel);
         //need a conditional for the JUMP
-        tac.addElement("JUMP " + whileLabel);
+        tac.addElement("JUMP");
+        tac.addElement(whileLabel);
+        tac.addElement("LABEL");
+        tac.addElement(endWhileLabel);
         completeWhileTAC.add(tac);
         return completeWhileTAC;
     }
