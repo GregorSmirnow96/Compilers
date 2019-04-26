@@ -84,9 +84,12 @@ public class LittleBaseListener implements LittleListener
     {
         this.ast.pop();
         List<TACLine> linesOfCode = this.ast.generate3AC();
-        linesOfCode.forEach(line -> System.out.println(line.getLineText()));
         TinyAssemblyGenerator generator = new TinyAssemblyGenerator();
-        generator.assemble((ArrayList<TACLine>)linesOfCode);
+        generator.assemble((ArrayList<TACLine>)linesOfCode).forEach(line ->
+        {
+            System.out.println(line);
+        });
+        
     }
         
     /**
