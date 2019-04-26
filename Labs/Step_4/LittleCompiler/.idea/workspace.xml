@@ -2,104 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffaab73-034e-4d12-9aa2-bf8a72c5e101" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../.idea/Compilers.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Step_3/SymbolTables/dist/README.TXT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Step_3/SymbolTables/dist/SymbolTables.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/built-jar.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/TinyAssemblyGenerator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/assembly/TinyAssemblyGenerator.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/LittleCompiler.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/README.TXT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/lib/SymbolTables.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/lib/antlr-4.7.1-complete.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/lib/junit-4.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assembly/TinyAssemblyGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/SymbolTables/build/built-jar.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Step_3/SymbolTables/build/built-jar.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/SymbolTables/build/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/SymbolTables/build/classes/.netbeans_update_resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/SymbolTables/build/classes/symboltables/SymbolTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Step_3/SymbolTables/build/classes/symboltables/SymbolTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/SymbolTables/build/classes/symboltables/SymbolTableVisualizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Step_3/SymbolTables/build/classes/symboltables/SymbolTableVisualizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Step_3/SymbolTables/src/symboltables/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Step_3/SymbolTables/src/symboltables/SymbolTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3rd_Party_Dependencies/SymbolTables.jar" beforeDir="false" afterPath="$PROJECT_DIR$/3rd_Party_Dependencies/SymbolTables.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/AssignNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/AssignNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/IfNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/IfNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/DivideNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/DivideNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/EqualNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/EqualNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/GreaterThanOrEqualToNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/GreaterThanOrEqualToNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/LessThanNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/LessThanNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/MinusNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/MinusNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/PlusNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/Operators/PlusNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/ReadNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/ReadNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/WhileNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/WhileNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/WriteNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/AbstractSyntaxTree/Nodes/WriteNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleBaseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Add_minus_expressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Add_minus_expressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$AddopContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$AddopContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Any_typeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Any_typeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Assign_exprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Assign_exprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Assign_stmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Assign_stmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Base_stmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Base_stmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Call_exprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Call_exprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$CompopContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$CompopContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$CondContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$CondContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$DeclContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$DeclContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Else_partContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Else_partContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$ExprContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$ExprContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Expr_listContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Expr_listContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Expr_list_tailContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Expr_list_tailContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Expression_componentContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Expression_componentContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Func_bodyContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Func_bodyContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Func_declContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Func_declContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Func_declarationsContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Func_declarationsContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$IdContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$IdContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Id_listContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Id_listContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Id_tailContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Id_tailContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$If_stmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$If_stmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$MulopContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$MulopContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Multiply_divide_expressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Multiply_divide_expressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Param_declContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Param_declContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Param_decl_listContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Param_decl_listContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Param_decl_tailContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Param_decl_tailContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Pgm_bodyContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Pgm_bodyContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$PrimaryContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$PrimaryContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$ProgramContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$ProgramContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Read_stmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Read_stmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Return_stmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Return_stmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$StmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$StmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Stmt_listContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Stmt_listContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Stmt_list_tailContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Stmt_list_tailContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$StrContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$StrContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$String_declContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$String_declContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Var_declContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Var_declContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Var_typeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Var_typeContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$While_stmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$While_stmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Write_stmtContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser$Write_stmtContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/GeneratedGrammarFiles/LittleParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/LittleErrorStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/LittleErrorStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/littlecompiler/SymbolTableContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/littlecompiler/SymbolTableContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs/step4_testcase.micro" beforeDir="false" afterPath="$PROJECT_DIR$/inputs/step4_testcase.micro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/AssignNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/AssignNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/IfNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/EqualNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/EqualNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanOrEqualToNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/GreaterThanOrEqualToNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/LessThanOrEqualToNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MinusNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MinusNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/MultiplyNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/NotEqualNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/ReadNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/ReadNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WriteNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WriteNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/LittleBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/littlecompiler/GeneratedGrammarFiles/LittleBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -115,46 +18,17 @@
     <favorites_list name="LittleCompiler" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5194805">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="845">
-                  <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/PlusNode.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="84">
-                  <caret line="16" selection-start-line="16" selection-end-line="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/littlecompiler/Little.g4">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="759">
-                  <caret line="52" column="59" selection-start-line="52" selection-end-line="52" selection-end-column="59" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/littlecompiler/Little.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -226,27 +100,6 @@
               <item name="LittleCompiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="LittleCompiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LittleCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LittleCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AbstractSyntaxTree" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LittleCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LittleCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AbstractSyntaxTree" type="462c0819:PsiDirectoryNode" />
-              <item name="Nodes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LittleCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LittleCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AbstractSyntaxTree" type="462c0819:PsiDirectoryNode" />
-              <item name="Nodes" type="462c0819:PsiDirectoryNode" />
-              <item name="Operators" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LittleCompiler" type="b2602c69:ProjectViewProjectNode" />
@@ -592,13 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/ElseNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -623,20 +469,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/littlecompiler/Little.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="52" column="59" selection-start-line="52" selection-end-line="52" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/WhileNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+        <state relative-caret-position="719">
+          <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractSyntaxTree/Nodes/Operators/DivideNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/littlecompiler/Little.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
