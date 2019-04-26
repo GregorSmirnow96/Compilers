@@ -9,6 +9,8 @@ import AbstractSyntaxTree.TACLine;
 
 import java.util.ArrayList;
 import java.util.List;
+import symboltables.SymbolTable;
+import symboltables.enums.ESymbolAttribute;
 
 /**
  *
@@ -16,14 +18,34 @@ import java.util.List;
  */
 public class WriteNode extends ASTNode
 {
+    private final SymbolTable scopeTable;
+    
+    public WriteNode(SymbolTable table)
+    {
+        this.scopeTable = table;
+    }
+    
     @Override
     public List<TACLine> generate3AC()
     {
         List<TACLine> completeWriteTAC = new ArrayList<>();
-        TACLine tac = new TACLine();
-        //tac.addElement(this.getType().toString());  //check on this
-        tac.addElement(this.children.get(0).toString());
-        completeWriteTAC.add(tac);
+        
+        this.children.forEach(child ->
+        {
+            VariableNode node = (VariableNode) child;
+            String variableName = node.getVariableName();
+            ESymbolAttribute type = this.scopeTable
+                .getSymbolByName(variableName)
+                .getAttribute();
+            String variableType = type == ESymbolAttribute.INT
+                ? "I"
+                : "F";
+            TACLine tac = new TACLine();
+            tac.addElement("WRITE".concat(variableType));
+            tac.addElement(variableName);
+            completeWriteTAC.add(tac);
+        });
+        
         return completeWriteTAC;
     }
 }

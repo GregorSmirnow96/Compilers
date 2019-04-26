@@ -10,17 +10,6 @@ BEGIN
 		i := 0;
 		a := 0;
 		b := 0;
-
-        READ (p);
-        IF (p = 10) 
-        	a := a + 1;
-        ELSE
-            IF (i = 0)
-                b := b + 1;
-            ENDIF
-        ENDIF
-        
-        i := i+1;
         
 		WHILE(i != 10)
 			READ (p);

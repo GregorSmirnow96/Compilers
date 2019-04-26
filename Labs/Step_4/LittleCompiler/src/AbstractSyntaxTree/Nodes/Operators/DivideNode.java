@@ -8,6 +8,8 @@ package AbstractSyntaxTree.Nodes.Operators;
 import AbstractSyntaxTree.Nodes.ASTNode;
 import AbstractSyntaxTree.Nodes.FloatLiteralNode;
 import AbstractSyntaxTree.Nodes.IntLiteralNode;
+import static AbstractSyntaxTree.Nodes.Operators.PlusNode.LEFT_OPERAND_INDEX;
+import AbstractSyntaxTree.Nodes.VariableNode;
 import AbstractSyntaxTree.TACLine;
 import AbstractSyntaxTree.TempararyRegisters;
 
@@ -42,12 +44,28 @@ public class DivideNode extends ASTNode
         if (left instanceof IntLiteralNode)
         {
             leftValue = String.valueOf(
-                ((IntLiteralNode) left).getLiteralValue());
+                ((FloatLiteralNode) left).getLiteralValue());
+            TACLine storeRightValue = new TACLine();
+            storeRightValue.addElement("STOREI");
+            storeRightValue.addElement(leftValue);
+            leftValue = TempararyRegisters.getInstance().getTempReg();
+            storeRightValue.addElement(leftValue);
+            completeAddTAC.add(storeRightValue);
         }
         else if (left instanceof FloatLiteralNode)
         {
             leftValue = String.valueOf(
                 ((FloatLiteralNode) left).getLiteralValue());
+            TACLine storeRightValue = new TACLine();
+            storeRightValue.addElement("STOREF");
+            storeRightValue.addElement(leftValue);
+            leftValue = TempararyRegisters.getInstance().getTempReg();
+            storeRightValue.addElement(leftValue);
+            completeAddTAC.add(storeRightValue);
+        }
+        else if (left instanceof VariableNode)
+        {
+            leftValue = ((VariableNode) left).getVariableName();
         }
         else
         {
@@ -62,11 +80,27 @@ public class DivideNode extends ASTNode
         {
             rightValue = String.valueOf(
                 ((IntLiteralNode) right).getLiteralValue());
+            TACLine storeRightValue = new TACLine();
+            storeRightValue.addElement("STOREI");
+            storeRightValue.addElement(rightValue);
+            rightValue = TempararyRegisters.getInstance().getTempReg();
+            storeRightValue.addElement(rightValue);
+            completeAddTAC.add(storeRightValue);
         }
         else if (right instanceof FloatLiteralNode)
         {
             rightValue = String.valueOf(
                 ((FloatLiteralNode) right).getLiteralValue());
+            TACLine storeRightValue = new TACLine();
+            storeRightValue.addElement("STOREF");
+            storeRightValue.addElement(rightValue);
+            rightValue = TempararyRegisters.getInstance().getTempReg();
+            storeRightValue.addElement(rightValue);
+            completeAddTAC.add(storeRightValue);
+        }
+        else if (right instanceof VariableNode)
+        {
+            rightValue = ((VariableNode) right).getVariableName();
         }
         else
         {

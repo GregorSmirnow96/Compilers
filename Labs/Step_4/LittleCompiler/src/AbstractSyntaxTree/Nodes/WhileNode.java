@@ -17,27 +17,45 @@ import java.util.List;
  */
 public class WhileNode extends ASTNode
 {
-    protected final static int WHILE_CONDITION_INDEX = 2;
-    protected final static int WHILE_DECL_INDEX = 4;
-    protected final static int WHILE_STMTLIST_INDEX = 5;
+    protected final static int CONDITION_INDEX = 0;
+    protected final static int STATEMENT_LIST_INDEX = 1;
 
     @Override
     public List<TACLine> generate3AC()
     {
-        Labels label = Labels.getInstance();
-        String whileLabel = label.getLabel();
-        String endWhileLabel = label.getLabel();
         List<TACLine> completeWhileTAC = new ArrayList<>();
         
-        TACLine tac = new TACLine();
-
-        tac.addElement(whileLabel);
-        //need a conditional for the JUMP
-        tac.addElement("JUMP");
-        tac.addElement(whileLabel);
-        tac.addElement("LABEL");
-        tac.addElement(endWhileLabel);
-        completeWhileTAC.add(tac);
+        Labels label = Labels.getInstance();
+        String whileLabel = label.getLabel();
+        String exitLabel = label.getLabel();
+        
+        TACLine whileLabelLine = new TACLine();
+        whileLabelLine.addElement("LABEL");
+        whileLabelLine.addElement(whileLabel);
+        completeWhileTAC.add(whileLabelLine);
+        
+        List<TACLine> conditionCode = this.children
+            .get(CONDITION_INDEX)
+            .generate3AC();
+        conditionCode.get(conditionCode.size() - 1).addElement(exitLabel);
+        completeWhileTAC.addAll(conditionCode);
+        
+        /* Statement list */
+        completeWhileTAC.addAll(
+            this.children
+                .get(STATEMENT_LIST_INDEX)
+                .generate3AC());
+        
+        TACLine jumpUpLine = new TACLine();
+        jumpUpLine.addElement("JUMP");
+        jumpUpLine.addElement(whileLabel);
+        completeWhileTAC.add(jumpUpLine);
+        
+        TACLine jumpOutLabel = new TACLine();
+        jumpOutLabel.addElement("LABEL");
+        jumpOutLabel.addElement(exitLabel);
+        completeWhileTAC.add(jumpOutLabel);
+        
         return completeWhileTAC;
     }
 }
