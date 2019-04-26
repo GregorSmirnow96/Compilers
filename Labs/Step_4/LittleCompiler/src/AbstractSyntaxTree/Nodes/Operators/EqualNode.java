@@ -59,7 +59,7 @@ public class EqualNode extends ASTNode
         else if (left instanceof FloatLiteralNode)
         {
             String literal = String.valueOf(
-                ((IntLiteralNode) right).getLiteralValue());
+                ((FloatLiteralNode) right).getLiteralValue());
             TACLine storeLiteralLine = new TACLine();
             storeLiteralLine.addElement("STOREF");
             storeLiteralLine.addElement(literal);
@@ -99,7 +99,7 @@ public class EqualNode extends ASTNode
         else if (right instanceof FloatLiteralNode)
         {
             String rightLiteral = String.valueOf(
-                ((IntLiteralNode) right).getLiteralValue());
+                ((FloatLiteralNode) right).getLiteralValue());
             TACLine storeLiteralLine = new TACLine();
             storeLiteralLine.addElement("STOREF");
             storeLiteralLine.addElement(rightLiteral);

@@ -44,7 +44,7 @@ public class DivideNode extends ASTNode
         if (left instanceof IntLiteralNode)
         {
             leftValue = String.valueOf(
-                ((FloatLiteralNode) left).getLiteralValue());
+                ((IntLiteralNode) left).getLiteralValue());
             TACLine storeRightValue = new TACLine();
             storeRightValue.addElement("STOREI");
             storeRightValue.addElement(leftValue);
